@@ -1,0 +1,1059 @@
+
+{
+  "English": "English",
+  "Hindi": "Hindi",
+  "French": "French",
+  "Spanish": "Spanish",
+  "Russian": "Russian",
+  "Arabic": "Arabic",
+  "Italian": "Italian",
+  "Korean": "Korean",
+  "Chinese": "Chinese",
+  "SelectLanguage": "Select Language",
+  "Name": "Nome",
+  "Default": "Padrão",
+  "Variation" : "Variação",
+  "ProceedtoCCAvenue": "Proceed to CC Avenue",
+  "DeliveryTime": "Hora de Entrega",
+  "DeliveryDate": "Data de Entrega",
+  "GiftCardPromo": "Gift Card Promo",
+  "Haveacoupon?Enterbelow" : "Tem um cupão?",
+  "Delete" : "Remover",
+  "AddToCart" : "Adicionar ao Carrinho",
+  "InStock": "Disponível",	
+  "EmptyWishlistViewMessage": "Empty Wishlist View Message",
+  "Wishlist": "Lista de Desejos",
+  "AccountInfo": "Dados da Conta",
+  "RegisterAccount": "Criar Conta",
+  "Cancel": "Cancelar",
+  "LogIn": "Iniciar Sessão",
+  "Shop": "Loja",
+  "ProductName": "Produto",
+  "SameForShipping": "Mesmo que envio",
+  "Signup": "Não tem conta? Crie aqui",
+  "Account": "Minha Conta",
+  "Address": "Morada",
+  "Logout": "Sair",
+  "Welcome": "Bem-vindo(a)",
+  "Email": "Email",
+  "password": "Password",
+  "FirstName": "Nome",
+  "LastName": "Apelido",
+  "Company": "Empresa",
+  "Phone": "Telemóvel",
+  "StreetAddress": "Morada",
+  "City": "Cidade",
+  "Postcode": "Código Postal",
+  "Country": "País",
+  "State": "Distrito",
+  "AddressBook": "Livro de Endereços",
+  "EditAddress": "Editar Endereço",
+  "ShippingAddress": "Endereço de Envio",
+  "Save": "Guardar",
+  "ResetPassword": "Recuperar Password",
+  "Enteremailaddress": "Endereço de e-mail",
+  "ForgotPasswordReset": "Digite o seu endereço de email para que lhe possamos os passos para recuperar a sua password.",
+  "reset": "recuperar",
+  "OrderInfo": "Informação da Encomenda",
+  "OrderNumber": "ID da Encomenda",
+  "Date": "Data",
+  "PaymentMethod": "Método de Pagamento",
+  "BillingAddress": "Endereço de Faturação",
+  "ShippingMethod": "Método de Envio",
+  "ProductDetails": "Detalhes do Produto",
+  "Total": "Total",
+  "SubTotal": "Sub-total",
+  "ShippingTotal": "Total do Envio",
+  "TaxTotal": "IVA",
+  "GrandTotal": "Total",
+  "LastOrders": "Encomendas",
+  "Pleaselogin": "Inicie Sessão",
+  "Youmustlogintoseeyourorders": "Inicie sessão para que possa consultar as suas encomendas",
+  "username": "utilizador",
+  "ForgotPassword": "Password esquecida",
+  "Therearenoorders.": "Ainda não tem nenhuma encomenda.",
+  "OrderNumber": "ID da Encomenda",
+  "Orderdate": "Data da Encomenda",
+  "Shipto": "Enviar para",
+  "Status": "Estado",
+  "Quantity": "Quantidade",
+  "ViewDetails": "Ver Detalhes",
+  "Cart": "Carrinho",
+  "Yourcartisempty!": "O seu carrinho de compras está vazio!",
+  "emptycartrestuarent": "Add some delicious food available on our menu to checkout.",
+  "BrowseOurMenu": "Browse Our Menu",
+  "Price": "Preço",
+  "Selectashippingmethod": "Método de Envio",
+  "Coupons": "Cupões",
+  "Shipping": "Envio",
+  "Grand Total": "Total",
+  "Checkout": "Finalizar Compra",
+  "Returningcustomer?Loginhere..": "De regresso? Inicie sessão",
+  "CreateAccount": "Criar Conta",
+  "Createanaccounttext": "Create an account by entering the information below. If you are a returning customer please login at the top of the page.",
+  "Yourorder": "Encomendas",
+  "Coupon": "Cupão",
+  "ProceedtopayPal": "Continuar com payPal",
+  "ProceedtoPayUMoney": "Continuar com PayU Money",
+  "CardNumber": "Número do Cartão",
+  "StripeCardDetails": "Detalhdes Stripe",
+  "ExpiryMonth": "Mês",
+  "ExpiryYear": "Ano",
+  "CardCode": "Código",
+  "SelectPaymentMethod": "Selecione o método de pagamento",
+  "OrderSummary": "Resumo da Encomenda",
+  "OrderReceived": "Encomenda Recebida",
+  "orderreceivedtext": "Obrigado. A sua encomenda foi recebida.",
+  "OrderNumber": "ID da Encomenda",
+  "Orderdate": "Data da Encomenda",
+  "Totalquantity": "Quantidade Total",
+  "OrderDetails": "Detalhes da Encomenda",
+  "Shipping": "Envio",
+  "Continue": "Continuar",
+  "Home": "Início",
+  "UrbanKitchen": "Urban Kitchen",
+  "Product": "Produto",
+  "OUTOFSTOCK": "ESGOTADO",
+  "Options": "Opçoes",
+  "Selectoption": "Selecionar opção",
+  "ShortDescription": "Short Description",
+  "Description": "Descrição",
+  "ShowReviews": "Show Reviews",
+  "Reviews": "Reviews",
+  "Products": "Produtos",
+  "RelatedProducts": "Produtos Relacionados",
+  "Categories": "Categorias",
+  "Add": "Adicionar",
+  "resetting...": "A reiniciar...",
+  "Logging In...": "A entrar...",
+  "Registering...": "A registar...",
+  "ContinueShopping": "Continar a comprar",
+  "AddToEmptyCart": "Add some products available in our menu to checkout",
+  "Remove": "Remover",
+  "Apply": "Aplicar",
+  "ContinueCheckout": "Finalizar Compra",
+  "PleaseWait": "Por favor aguarde",
+  "PlaceOrder": "Encomendar",
+  "Saving...": "Saving...",
+   "TermsConditions" : "Termos & Condições",
+  "IAgree" : "Concordo",
+  "CouponCode" : "Código Cupão",
+  "Register" : "Criar Conta",
+  "Select a shipping method" : "Método de Envio",
+  "YourOrders" : "Resumo da Encomenda",
+  "Correspondences": "Correspondência de tamanhos",
+  "Pictogramas": "Simbolos representativos",
+  "Pictogramas1": "Informação dos Símbolos Representativos",
+  "RecoverPassword": "Recuperar Senha",
+  "Newpassword": "Nova senha",
+  "ReEnterNewpassword": "Digite sua senha novamente",
+  "Back" : "Voltar",
+  "Sort" : "Ordernar",
+  "paypalDescription" : "Pagar com Paypal:\r\nPode pagar com cartão de crédito se não tiver Paypal"
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

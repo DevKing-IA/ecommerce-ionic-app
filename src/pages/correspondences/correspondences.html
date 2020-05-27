@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle> <img src="assets/image/menu.png" width="25"></button>
+        <ion-title> <img src="assets/image/logo.png" width="45"></ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+                <ion-icon class="ion-ios-basket-outline item-icon"> <img src="assets/image/basket.png" width="20">
+                </ion-icon>
+
+                <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+
+            </button>
+
+        </ion-buttons>
+
+    </ion-navbar>
+
+    <ion-title text-center><span>{{"Correspondences" | translate}}</span></ion-title>
+
+</ion-header>
+<ion-content padding class="correspondences"> <p>Como medir os seus pés em três passos muito simples:</p>
+    <ul>
+        <li>Coloque o seu maior pé sobre uma folha de papel e marque com lápis um traço sobre o dedo grande do pé e do
+            calcanhar
+        </li>
+
+        <div><img src="assets/image/pe_1.png"/></div>
+
+        <li>Trace uma linha reta entre os dois traços marcados na folha</li>
+
+        <div><img src="assets/image/pe_2.png"/></div>
+
+        <li>Meça a linha reta que acabou de desenhar e preencha o seguinte formulário</li>
+
+    </ul>
+
+    <ion-item>
+        <ion-label>Género</ion-label>
+
+        <ion-select [(ngModel)]="form.genero" (ionChange)="onGeneroChange($event)" name="genero">
+            <div>
+                <ion-option value="senhora">Senhora</ion-option>
+
+            </div>
+
+            <div>
+                <ion-option value="homem">Homem</ion-option>
+
+            </div>
+
+            <div>
+                <ion-option value="crianca">Criança</ion-option>
+
+            </div>
+
+        </ion-select>
+
+    </ion-item>
+
+    <ion-item *ngIf="form.genero">
+        <ion-label>Tamanho (cm)</ion-label>
+
+        <ion-select [(ngModel)]="form.tamanho" name="tamanho">
+            <div *ngFor="let field of tamanhos | keys">
+                <ion-option value="{{field.value}}">{{field.key}}</ion-option>
+
+            </div>
+
+        </ion-select>
+
+    </ion-item>
+     <br/> <p *ngIf="form.tamanho">O tamanho recomendado é <b [innerHTML]="form.tamanho"></b>. No entanto caso
+        pretenda um calçado desportivo, recomendamos que encomende o tamanho imediatamente acima, pois as formas do
+        desporto têm por base a numeração americana. Assim deverá solicitar o tamanho <span
+                [innerHTML]="parseInt(form.tamanho) + 1"></span>,pois certamente será o tamanho ideal.</p>
+</ion-content>

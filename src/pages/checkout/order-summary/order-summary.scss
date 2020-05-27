@@ -1,0 +1,53 @@
+.order-summary {
+    font-family: arial;
+    .pad {
+        padding-bottom: 40px;
+    }
+    scroll-content {
+        padding-bottom: 52px;
+    }
+    .item {
+        padding: 0px 10px;
+    }
+    .list {
+        margin: 0;
+    }
+    .thank-you-message {
+        ion-label {
+            white-space: normal;
+            text-align: center;
+        }
+        h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        h3 {
+            margin-bottom: 10px;
+        }
+    }
+    .label {
+        margin: 0px;
+    }
+    .summary {
+        .item h2 {
+            margin: 10px 5px;
+            font-size: 15px;
+            font-weight: normal;
+        }
+    }
+    .order-details {
+        ion-label {
+            margin: 5px 10px;
+        }
+        ion-item {
+            background-color: #f2f2f2;
+            padding: 0 4px;
+        }
+    }
+    .side-header {
+        font-size: 16px;
+    }
+    .order-total {
+        background-color: #f2f2f2;
+    }
+}

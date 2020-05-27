@@ -1,0 +1,104 @@
+<!--<ion-header>-->
+  <!--<ion-navbar color="header">-->
+    <!--<button ion-button menuToggle>-->
+        <!--<img src="assets/image/menu.png" width="25">-->
+    <!--</button>-->
+    <!--<ion-title  text-center>{{"LastOrders" | translate}}-->
+    <!--</ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle> <img src="assets/image/menu.png" width="25"></button>
+
+    <ion-title> <img src="assets/image/logo.png" width="45"></ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+        <ion-icon class="ion-ios-basket-outline item-icon"> <img src="assets/image/basket.png" width="20">
+        </ion-icon>
+
+        <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+
+      </button>
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+  <ion-title text-center><span>{{"LastOrders" | translate}}</span></ion-title>
+
+</ion-header>
+<ion-content text-wrap class="account-order">
+  <ion-spinner *ngIf="!orders" name="crescent">
+  </ion-spinner>
+  <div *ngIf="orders">
+
+    <div class="no-orders">
+    <h4 *ngIf="orders.orders.length == 0" text-center no-lines>
+      <button ion-button full clear text-uppercase color="header">{{"Therearenoorders." | translate}}
+      </button>
+    </h4>
+    </div>
+
+    <div *ngIf="orders.orders.length">
+      <ion-item *ngFor="let item of orders.orders">
+        <h2>
+          <b>{{"OrderNumber" | translate}} :
+          </b> {{item.order_number}}
+        </h2>
+        <h2>
+          <b>{{"Status" | translate}} :
+          </b> {{item.status}}
+        </h2>
+        <h2>
+          <b>{{"Orderdate" | translate}} :
+          </b> {{item.created_at | date:'medium'}}
+        </h2>
+        <h2>
+          <b>{{"Shipto" | translate}} :
+          </b> {{item.shipping_address.first_name}} {{item.shipping_address.last_name}}, {{item.shipping_address.address_1}}, {{item.shipping_address.address_2}}, {{item.shipping_address.city}}, {{item.shipping_address.state}}, {{item.shipping_address.country}}, {{item.shipping_address.postcode}}
+        </h2>
+        <h2>
+          <b>{{"Quantity" | translate}} :
+          </b> {{item.total_line_items_quantity}}
+        </h2>
+        <h2>
+          <b>{{"SubTotal" | translate}} :
+          </b> {{1*item.subtotal  }}
+        </h2>
+        <h2>
+          <b>{{"Totals" | translate}} :
+          </b> {{1*item.total  }}
+        </h2>
+        <ion-row class="row-buttons">
+          <ion-col no-padding width-50 text-center>
+            <button ion-button icon-left clear no-margin color="button-color" small text-uppercase icon-only class="has-icon icon-only" (click)="getOrderDetails(item.id)">
+              <ion-icon name="ios-eye">
+              </ion-icon>
+              {{"ViewDetails" | translate}} 
+            </button>
+          </ion-col>
+          <ion-col no-padding width-50 text-center>
+            <button *ngIf="item.status != 'cancelled'" text-center ion-button icon-left clear no-margin color="button-color" icon-only class="has-icon icon-only" small text-uppercase (click)="cancelOrder(item.id)">		
+              <ion-icon ios="ios-close" md="md-close">
+              </ion-icon>  		
+              {{"Cancel" | translate}} 
+            </button>
+            <button *ngIf="item.status == 'cancelled'" text-center ion-button icon-left clear no-margin color="button-color" icon-only class="has-icon icon-only" small text-uppercase (click)="reOrder(item.id)">
+              <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle">
+              </ion-icon>		  		
+              {{"Reorder" | translate}} 
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </div> 
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="has_more_items">
+      <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="{{'Loading more items..' | translate}}">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

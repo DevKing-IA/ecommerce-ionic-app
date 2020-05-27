@@ -1,0 +1,64 @@
+.account-login {
+    .margin {
+        margin: 10px;
+    }
+    .list {
+        margin: 0 0 16px 0;
+    }
+    .item {
+        padding: 0px;
+    }
+    .button {
+        border-radius: 7px;
+    }
+    img {
+        width: 150px;
+        height: auto;
+        margin: 40px auto;
+        display: block;
+    }
+    .login {
+        .list .item-block .item-inner {
+            border-bottom: none;
+        }
+        .list>.item-block:first-child {
+            border-top: none;
+        }
+        .list>.item-block:last-child {
+            border-bottom: none;
+        }
+        .text-input {
+            border: 2px solid #e0e0e0;
+            height: 2.5em;
+            border-radius: 7px;
+            padding: 0 8px;
+            margin: 11px 8px 11px 8px;
+        }
+        .label {
+            margin: 0 20px -4px 20px;
+            font-size: 15px;
+        }
+        .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+            border-bottom-color: transparent;
+            box-shadow: none;
+        }
+        .item-md.item-input.input-has-focus .item-inner {
+            box-shadow: none;
+        }
+        .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+            border-bottom-color: transparent;
+            box-shadow: none;
+        }
+        .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+            border-bottom-color: transparent;
+            box-shadow: none;
+        }
+        .list-md .item-input.input-has-focus:last-child {
+            box-shadow: none;
+        }
+        .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+            border-bottom-color: transparent;
+            box-shadow: none;
+        }
+    }
+}

@@ -1,0 +1,143 @@
+<ion-menu [content]="content" *ngIf="config.appDir == 'rtl'" side="right">
+  <div class="menu-toolbar">
+    <ion-toolbar color="header">
+      <div class="profile-image">
+        Menu
+      </div>
+      <!--button ion-button full menuClose clear color="light" class="button-customername" *ngIf="values.isLoggedIn">
+        <strong>{{values.customerName}}
+        </strong>
+      </button>
+      <button ion-button full menuClose clear color="light" class="button-welcome" *ngIf="!values.isLoggedIn">
+        <strong>{{"Welcome" | translate}}
+        </strong>
+      </button-->
+    </ion-toolbar>
+  </div>  
+  <ion-content class="sidemenugrad rtl">
+    <ion-list>
+      <div class="list-item-divider">
+        <ion-item-divider>    
+          <ion-icon ios="ios-contact" md="md-contact" item-left>
+          </ion-icon>
+          <strong>{{"Account" | translate}}
+          </strong>        
+        </ion-item-divider>
+      </div>
+      <ion-item tappable full menuClose  (click)="login()" *ngIf="!values.isLoggedIn">       
+        <ion-icon item-left name="md-log-in">
+        </ion-icon>{{"LogIn" | translate}}       
+      </ion-item>
+      <ion-item tappable full menuClose (click)="register()" *ngIf="!values.isLoggedIn">       
+        <ion-icon item-left ios="ios-create" md="md-create">
+        </ion-icon>{{"RegisterAccount" | translate}}      
+      </ion-item>
+      <ion-item tappable full menuClose (click)="address()" *ngIf="values.isLoggedIn">
+        <ion-icon item-left ios="md-locate" md="md-locate">
+        </ion-icon>{{"Address" | translate}}     
+      </ion-item>
+      <ion-item tappable full menuClose (click)="order()" *ngIf="values.isLoggedIn">
+        <ion-icon item-left ios="md-reorder" md="md-reorder">
+        </ion-icon>{{"Yourorder" | translate}}
+      </ion-item>
+      <ion-item tappable menuClose (click)="wishlist()" *ngIf="values.isLoggedIn">
+        <ion-icon ios="ios-heart" md="md-heart" item-left>
+        </ion-icon>{{"Wishlist" | translate}}  
+      </ion-item>
+      <ion-item tappable full menuClose (click)="cart()">
+        <ion-icon ios="ios-cart" md="md-cart" item-left>
+        </ion-icon>
+        {{"Checkout" | translate}}        
+      </ion-item>
+      <ion-item tappable full menuClose (click)="logout()" *ngIf="values.isLoggedIn">        
+        <ion-icon item-left name="md-log-out">
+        </ion-icon>{{"Logout" | translate}}        
+      </ion-item>
+    </ion-list>
+    <br>
+  </ion-content>
+</ion-menu>
+<ion-menu [content]="content" *ngIf="config.appDir == 'ltr'" side="left">
+  <div class="menu-toolbar">
+    <ion-toolbar color="header">
+      <div class="profile-image">
+        
+      </div>
+      <!--button ion-button full menuClose clear color="light" class="button-customername" *ngIf="values.isLoggedIn">
+        <strong>{{values.customerName}}
+        </strong>
+      </button>
+      <button ion-button full menuClose clear color="light" class="button-welcome" *ngIf="!values.isLoggedIn">
+        <strong>{{"Welcome" | translate}}
+        </strong>
+      </button-->  
+    </ion-toolbar>
+  </div>
+  <ion-content class="sidemenugrad">
+    <ion-list no-margin>
+      <div class="list-item-divider">
+        <ion-item-divider tappable menuClose (click)="shop()">
+          <ion-icon item-left ios="ios-home" md="md-home">
+          </ion-icon>
+          <strong>{{"Shop" | translate}}
+          </strong>
+        </ion-item-divider>
+      </div>
+    </ion-list>
+    <ion-list class="menu-items">
+      <ion-item-divider>
+        <ion-icon style="background-color: #32db64;" ios="ios-contact" md="md-contact" item-left>
+        </ion-icon>
+        <strong>{{"Account" | translate}}
+        </strong>
+      </ion-item-divider>
+      <ion-item tappable menuClose (click)="login()" *ngIf="!values.isLoggedIn">
+        <ion-icon style="background-color: #f25362" name="md-log-in" item-left>
+        </ion-icon>{{"LogIn" | translate}}
+      </ion-item>
+      <ion-item tappable menuClose (click)="register()" *ngIf="!values.isLoggedIn">
+        <ion-icon style="background-color: #3aa756" item-left ios="ios-create" md="md-create">
+        </ion-icon>{{"Register" | translate}}
+      </ion-item>
+      <ion-item tappable menuClose (click)="address()" *ngIf="values.isLoggedIn">
+        <ion-icon style="background-color: #3aa756" item-left ios="md-locate" md="md-locate">
+        </ion-icon>{{"Address" | translate}}
+      </ion-item>
+      <ion-item tappable menuClose (click)="order()" *ngIf="values.isLoggedIn">
+        <ion-icon style="background-color: #4688f1" item-left ios="md-reorder" md="md-reorder">
+        </ion-icon>{{"Yourorder" | translate}}
+      </ion-item>
+      <!-- <ion-item tappable menuClose (click)="contact()">
+       {{"Contact Us" | translate}}
+       <ion-icon style="background-color: #FF5722" name="ios-mail" item-left></ion-icon>
+     </ion-item>
+     <ion-item tappable menuClose (click)="post(this.values.data.pages.terms)">
+       <ion-icon style="background-color: #8BC34A" name="ios-paper" item-left></ion-icon>
+       {{"Terms & Conditions" | translate}}
+     </ion-item> -->
+      <ion-item tappable menuClose (click)="termsCondition()">
+        <ion-icon style="background-color: #8BC34A" name="ios-paper" item-left></ion-icon>
+        {{"TermsConditions" | translate}}
+      </ion-item>
+
+      <ion-item tappable menuClose (click)="correspondences()">
+        <ion-icon style="background-color: #8BC34A" name="ios-paper" item-left></ion-icon>
+        {{"Correspondences" | translate}}
+      </ion-item>
+
+      <ion-item tappable menuClose (click)="pictogramas()">
+        <ion-icon style="background-color: #8BC34A" name="ios-paper" item-left></ion-icon>
+        {{"Pictogramas" | translate}}
+      </ion-item>
+     <ion-item tappable menuClose (click)="logout()" *ngIf="values.isLoggedIn">
+      <ion-icon style="background-color: #FDD835" item-left name="md-log-out">
+      </ion-icon>{{"Logout" | translate}}
+    </ion-item>
+  </ion-list>
+  <br>
+  <br>
+  <br>
+</ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false">
+</ion-nav>

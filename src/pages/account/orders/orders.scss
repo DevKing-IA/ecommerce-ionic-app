@@ -1,0 +1,33 @@
+.account-order {
+    font-family: Arial;
+    .view-button {
+        margin-top: 10px;
+    }
+    scroll-content {
+        padding-bottom: 52px;
+    }
+    .item {
+        padding: 0;
+    }
+    .label {
+        margin: 11px 8px 11px 16px;
+    }
+    .item h2 {
+        margin: 5px 0;
+        font-size: 15px;
+        font-weight: normal;
+    }
+    .item-ios.item-block .item-inner {
+        padding-right: 8px;
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+    .no-orders {
+        h4 {
+            margin-top: 100px;
+        }
+    }
+    .row-buttons {
+        //padding-left: 5px;
+        text-align: center;
+    }
+}

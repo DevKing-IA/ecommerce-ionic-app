@@ -1,0 +1,416 @@
+<!--<ion-header>-->
+<!--<ion-navbar color="header"> -->
+<!--<button ion-button menuToggle>-->
+<!--<img src="assets/image/menu.png" width="25">-->
+<!--</button>-->
+<!--<ion-title text-wrap text-center>{{"Checkout" | translate}}-->
+<!--</ion-title>-->
+<!--</ion-navbar>-->
+<!--</ion-header>-->
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle><img src="assets/image/menu.png" width="25"></button>
+
+        <ion-title><img src="assets/image/logo.png" width="45"></ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+                <ion-icon class="ion-ios-basket-outline item-icon"><img src="assets/image/basket.png" width="20">
+                </ion-icon>
+
+                <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+
+            </button>
+
+        </ion-buttons>
+
+    </ion-navbar>
+
+    <ion-title text-center><span>{{"Checkout" | translate}}</span></ion-title>
+
+</ion-header>
+<ion-content text-wrap class="billing-address-form">
+    <div>
+        <ion-item *ngIf="!values.isLoggedIn" class="side-heading-background Returningcustomer" no-lines>
+            <ion-label color="side-heading-color">{{"Returningcustomer?Loginhere.." | translate}}
+                <ion-icon ios="ios-log-in" md="md-log-in">
+                </ion-icon>
+            </ion-label>
+            <ion-toggle checked="true" [(ngModel)]="form.islogin" name="subscribe">
+            </ion-toggle>
+        </ion-item>
+        <div *ngIf="form.islogin" class="login-form">
+            <form #f="ngForm">
+                <ion-list>
+                    <ion-item>
+                        <ion-label floating>{{"username" | translate}}
+                        </ion-label>
+                        <ion-input required type="email" [(ngModel)]="form.username" name="firstname">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"password" | translate}}
+                        </ion-label>
+                        <ion-input required type="password" [(ngModel)]="form.password" name="password">
+                        </ion-input>
+                    </ion-item>
+                </ion-list>
+                <div class="login-button">
+                    <button ion-button block color="button-color" type="submit" text-uppercase
+                            [disabled]="buttonSubmitLogin" (click)="login(loginData)">{{buttonText2}}
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div *ngIf="form.iscoupon" class="coupon">
+            <form #f="ngForm">
+                <ion-item>
+                    <ion-label floating>Cupão
+                    </ion-label>
+                    <ion-input required type="text" [(ngModel)]="form.coupon_code" name="coupon">
+                    </ion-input>
+                </ion-item>
+                <button ion-button color="button-color" block type="submit" [disabled]="buttonSubmitCoupon"
+                        (click)="submitCoupon()"> {{buttonText1}}
+                </button>
+            </form>
+        </div>
+        <div *ngIf="form">
+            <form #f="ngForm" class="form">
+                <ion-list no-margin>
+                    <ion-item class="side-heading-background">
+                        <ion-label class="col" color="side-heading-color">{{"BillingAddress" | translate}}
+                        </ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"FirstName" | translate}}
+                        </ion-label>
+                        <ion-input required type="text" [(ngModel)]="form.billing_first_name" name="firstname"
+                                   (keyup)="checkAlpha($event)">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"LastName"| translate}}
+                        </ion-label>
+                        <ion-input required type="text" [(ngModel)]="form.billing_last_name" name="lastname"
+                                   (keyup)="checkAlpha($event)">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"Phone" | translate}}
+                        </ion-label>
+                        <ion-input required type="number" [(ngModel)]="form.billing_phone" name="telephone">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"Email" | translate}}
+                        </ion-label>
+                        <ion-input required type="email" [(ngModel)]="form.billing_email" name="email">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label> {{"Country" | translate}}
+                        </ion-label>
+                        <ion-select [(ngModel)]="form.billing_country" (ngModelChange)="getRegion(form.billing_country)"
+                                    name="billing_country">
+                            <div *ngFor="let field of form.country.countries | keys">
+                                <ion-option value="{{field.key}}"><span [innerHTML]="field.value"></span>
+                                </ion-option>
+                            </div>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"City" | translate}}
+                        </ion-label>
+                        <ion-input required type="text" [(ngModel)]="form.billing_city" name="city"
+                                   (keyup)="checkAlpha($event)">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"Postcode" | translate}}
+                        </ion-label>
+                        <ion-input required type="text" [(ngModel)]="form.billing_postcode" name="postcode"
+                                   (keyup)="checkNumbers($event)">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"StreetAddress" | translate}}
+                        </ion-label>
+                        <ion-input required type="text" [(ngModel)]="form.billing_address_1" name="street1">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"NIF" | translate}}</ion-label>
+
+                        <ion-input type="text" [(ngModel)]="form.billing_company" name="company"></ion-input>
+
+                    </ion-item>
+                </ion-list>
+                <div class="same-for-shipping">
+                    <ion-item class="side-heading-background">
+                        <ion-label color="side-heading-color">{{"SameForShipping" | translate}}
+                        </ion-label>
+                        <ion-toggle checked="true" [(ngModel)]="form.shipping" name="shipping">
+                        </ion-toggle>
+                    </ion-item>
+                </div>
+                <div *ngIf="!form.shipping" class="same-for-shipping-form">
+                    <ion-list class="shipping-address-list">
+                        <ion-item class="side-heading-background">
+                            <ion-label color="side-heading-color">{{"ShippingAddress" | translate}}
+                            </ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label floating>{{"FirstName" | translate}}
+                            </ion-label>
+                            <ion-input required type="text" [(ngModel)]="form.shipping_first_name" name="first_name"
+                                       (keyup)="checkAlpha($event)">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label floating>{{"LastName"| translate}}
+                            </ion-label>
+                            <ion-input required type="text" [(ngModel)]="form.shipping_last_name" name="last_name"
+                                       (keyup)="checkAlpha($event)">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label floating>{{"StreetAddress" | translate}}
+                            </ion-label>
+                            <ion-input required type="text" [(ngModel)]="form.shipping_address_1" name="address_1">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label floating>{{"Postcode" | translate}}
+                            </ion-label>
+                            <ion-input required type="text" [(ngModel)]="form.shipping_postcode"
+                                       name="shipping_postcode" (keyup)="checkNumbers($event)">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label floating>{{"City" | translate}}
+                            </ion-label>
+                            <ion-input required type="text" [(ngModel)]="form.shipping_city" name="shipping_city"
+                                       (keyup)="checkAlpha($event)">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label> {{"Country" | translate}}
+                            </ion-label>
+                            <ion-select [(ngModel)]="form.shipping_country"
+                                        (ngModelChange)="getRegion(form.shipping_country)" name="shipping_country">
+                                <div *ngFor="let field of form.country.countries | keys">
+                                    <ion-option value="{{field.key}}"><span [innerHTML]="field.value"></span>
+                                    </ion-option>
+                                </div>
+                            </ion-select>
+                        </ion-item>
+                        <!--<ion-item>-->
+                        <!--<ion-label floating>{{"NIF" | translate}}</ion-label>-->
+                        <!--<ion-input type="text" [(ngModel)]="form.company" name="company"></ion-input>-->
+                        <!--</ion-item>-->
+                    </ion-list>
+                </div>
+            </form>
+        </div>
+        <ion-item *ngIf="!values.isLoggedIn" no-lines class="side-heading-background create-account">
+            <ion-label color="side-heading-color">{{"CreateAccount" | translate}}
+            </ion-label>
+            <ion-toggle checked="true" [(ngModel)]="form.register" name="subscribe">
+            </ion-toggle>
+        </ion-item>
+        <div *ngIf="form.register" class="create-account-form">
+            <form #f="ngForm">
+                <ion-list>
+                    <ion-label class="create-account-label"> {{"Createanaccounttext" | translate}}
+                    </ion-label>
+                    <ion-item>
+                        <ion-label floating>{{"password" | translate}}
+                        </ion-label>
+                        <ion-input required type="password" [(ngModel)]="form.password" name="password">
+                        </ion-input>
+                    </ion-item>
+                </ion-list>
+            </form>
+        </div>
+
+
+        <div *ngIf="OrderReview?.shipping" class="shipping">
+            <div no-margin text-wrap radio-group [(ngModel)]="chosen_shipping" (ngModelChange)="updateOrderReview()">
+                <ion-item class="side-heading-background payment-method-header" no-lines>
+                    <ion-label color="side-heading-color">{{"Select a shipping method" | translate}}
+                    </ion-label>
+                </ion-item>
+                <ion-item *ngFor="let method of OrderReview.shipping | keys" style="padding-left:20px">
+                    <ion-label><span [innerHTML]="method.value.label"></span> <b>-</b>
+                        <span>{{method.value.cost  | currency:values.currency:true:'1.2-2'}}</span></ion-label>
+                    <ion-radio value="{{method.value.id}}">
+                    </ion-radio>
+                </ion-item>
+            </div>
+        </div>
+
+        <ion-list *ngIf="OrderReview?.cart">
+            <ion-item class="side-heading-background order-review-header" no-lines>
+                <ion-label color="side-heading-color">{{"YourOrders" | translate}}
+                </ion-label>
+            </ion-item>
+            <div *ngFor="let item of OrderReview.cart.cart_contents | keys">
+                <ion-row>
+                    <ion-col width-75>
+                        <ion-label no-margin>{{item.value.name}} - ({{item.value.quantity}})
+                        </ion-label>
+                    </ion-col>
+                    <ion-col width-25 text-right>
+                        <ion-label no-margin>{{1 * item.value.line_subtotal | currency:values.currency:true:'1.2-2'}}
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div *ngIf="OrderReview.totals.discount_total && OrderReview.totals.discount_total != 0">
+                <ion-row>
+                    <ion-col width-75>
+                        <ion-label no-margin>{{"Coupon" | translate}}
+                        </ion-label>
+                    </ion-col>
+                    <ion-col width-25 text-right>
+                        <ion-label no-margin>
+                            - {{1 * OrderReview.totals.discount_total | currency:values.currency:true:'1.2-2'}}
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <ion-row>
+                <ion-col width-75>
+                    <ion-label no-margin>{{"SubTotal" | translate}}
+                    </ion-label>
+                </ion-col>
+                <ion-col width-25 text-right>
+                    <ion-label no-margin>{{1 * OrderReview.totals.subtotal | currency:values.currency:true:'1.2-2'}}
+                    </ion-label>
+                </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="OrderReview.totals.cart_contents_total != 0">
+                <ion-col width-75>
+                    <ion-label>{{"Subtotal_ex_tax" | translate}}
+                    </ion-label>
+                </ion-col>
+                <ion-col width-25 text-right>
+                    <ion-label>{{1 * OrderReview.totals.cart_contents_total | currency:values.currency:true:'1.2-2'}}
+                    </ion-label>
+                </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="OrderReview.totals.total_tax != 0">
+                <ion-col width-75>
+                    <ion-label>{{"Tax_total" | translate}}
+                    </ion-label>
+                </ion-col>
+                <ion-col width-25 text-right>
+                    <ion-label>{{1 * OrderReview.totals.total_tax | currency:values.currency:true:'1.2-2'}}
+                    </ion-label>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-75>
+                    <ion-label no-margin>
+                        <b>{{"Total" | translate}}
+                        </b>
+                    </ion-label>
+                </ion-col>
+                <ion-col width-25 text-right>
+                    <ion-label no-margin>
+                        <b>{{1 * OrderReview.totals.total | currency:values.currency:true:'1.2-2'}}
+                        </b>
+                    </ion-label>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+        <ion-item class="side-heading-background payment-method-header" no-lines>
+            <ion-label color="side-heading-color">{{"SelectPaymentMethod" | translate}}
+            </ion-label>
+        </ion-item>
+        <div *ngIf="form.payment">
+            <ion-list no-margin text-wrap radio-group [(ngModel)]="form.payment_method"
+                      (ngModelChange)="changePayment()">
+                <div *ngFor="let method of form.payment | keys" class="payment-icon">
+                    <ion-icon *ngIf="method.value.title === 'PayPal' " name="custom-paypal-icon"></ion-icon>
+                    <ion-icon *ngIf="method.value.title !== 'PayPal' " name="custom-stripe-icon"></ion-icon>
+                    <ion-label class="payment-method-title">{{method.value.title}}
+                    </ion-label>
+                    <ion-radio value="{{method.value.id}}">
+                    </ion-radio>
+                </div>
+            </ion-list>
+            <div *ngIf="form.payment_method != 'stripe'" class="side-heading-background">
+                <ion-label class="payment-instructions" style="white-space: pre-line">{{getPaymentInstruction(form.payment_instructions)}}
+                </ion-label>
+                <ion-item *ngIf="form.terms_content" no-lines class="side-heading-background">
+                    <ion-label>{{"IAgree" | translate}} <a (click)="terms()">{{"TermsConditions" | translate}}</a>
+                    </ion-label>
+                    <ion-toggle checked="true" [(ngModel)]="form.terms" name="terms">
+                    </ion-toggle>
+                </ion-item>
+                <div class="button-margin">
+                    <button ion-button color="button-color" text-uppercase [disabled]="buttonSubmit" block secondary
+                            type="submit" class="button button-block button-default"
+                            (click)="checkout()">{{"PlaceOrder" | translate}}
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf="form.payment_method =='stripe'" class="side-heading-background stripe-payment">
+            <ion-label [innerHTML]="form.payment.stripe.description">
+            </ion-label>
+            <form #f="ngForm">
+                <ion-list no-margin>
+                    <ion-item class="side-heading-background">
+                        <ion-label color="side-heading-color">Stripe Card Details
+                        </ion-label>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"CardNumber" | translate}}
+                        </ion-label>
+                        <ion-input required type="text" [(ngModel)]="form.stripe_number" name="stripe_number">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"ExpiryMonth" | translate}} (MM)
+                        </ion-label>
+                        <ion-input required type="text" [(ngModel)]="form.stripe_exp_month" name="stripe_exp_year">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"ExpiryYear" |translate}} (YYYY)
+                        </ion-label>
+                        <ion-input required type="text" [(ngModel)]="form.stripe_exp_year" name="stripe_exp_year">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>{{"CardCode" | translate}}
+                        </ion-label>
+                        <ion-input required type="text" [(ngModel)]="form.stripe_code" name="stripe_code">
+                        </ion-input>
+                    </ion-item>
+                </ion-list>
+            </form>
+            <ion-item class="side-heading-background" no-lines>
+                <ion-label>{{"IAgree" | translate}} <a (click)="terms()">{{"TermsConditions" | translate}}</a>
+                </ion-label>
+                <ion-toggle checked="true" [(ngModel)]="form.terms" name="terms">
+                </ion-toggle>
+            </ion-item>
+
+            <div class="button-margin">
+                <button ion-button color="button-color" text-uppercase *ngIf="form.payment_method =='stripe'"
+                        [disabled]="buttonSubmit" (click)="checkout()" block secondary type="submit"
+                        class="button button-block button-default">{{"PlaceOrder" | translate}}
+                </button>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</ion-content>

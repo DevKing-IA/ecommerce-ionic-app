@@ -1,0 +1,8 @@
+const proxy = [
+  {
+    context: "/api",
+    target: "http://localhost:8100",
+    pathRewrite: {"^/api" : "https://cgapp.lragencytechnology.com"}
+  }
+];
+module.exports = proxy;

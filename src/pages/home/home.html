@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle>
+        <img src="assets/image/menu.png" width="25">
+    </button>
+    <ion-title>
+      <img src="assets/image/logo.png" width="45">
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+        <ion-icon class="ion-ios-basket-outline item-icon">
+           <img src="assets/image/basket.png" width="20">
+        </ion-icon>
+        <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}
+        </ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="home">
+  <ion-spinner *ngIf="!service?.categories" name="crescent">
+  </ion-spinner>
+  <div *ngIf="service?.categories">
+    <div *ngIf="service.mainCategories" class="main-categories">
+      <ion-row class="row unlimited-items">
+        <ion-col class="col" *ngFor="let item of service.mainCategories">
+          <a (click)="getCategory(item.id, item.slug, item.name)">
+            <ion-card>
+              <ion-card-content>
+                <span class="cat-overlay"></span>
+                <img src="{{item.image || 'assets/image/category.png'}}"/>
+                <div text-center>
+                  <ion-label text-uppercase>
+                    <span [innerHTML]="item.name"></span>
+                    <em class="cat-description">Descrição da Categoria</em>
+                  </ion-label>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </a>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

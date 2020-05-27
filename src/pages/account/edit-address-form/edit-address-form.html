@@ -1,0 +1,216 @@
+<!--<ion-header no-border>-->
+  <!--<ion-navbar color="header">-->
+    <!--<button ion-button menuToggle>-->
+        <!--<img src="assets/image/menu.png" width="25">-->
+    <!--</button>-->
+    <!--<ion-title text-center>{{"Edit Address" | translate}}-->
+    <!--</ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle> <img src="assets/image/menu.png" width="25"></button>
+
+    <ion-title> <img src="assets/image/logo.png" width="45"></ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+        <ion-icon class="ion-ios-basket-outline item-icon"> <img src="assets/image/basket.png" width="20">
+        </ion-icon>
+
+        <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+
+      </button>
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+  <ion-title text-center><span>{{"EditAddress" | translate}}</span></ion-title>
+
+</ion-header>
+<ion-content class="edit-address-form">
+  <div>
+    <ion-list>
+      <ion-item class="side-heading-background">
+        <h2 class="heading-label">{{"BillingAddress" | translate}}
+        </h2>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"FirstName" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.billing_address.first_name" name="first_name" (keyup)="checkAlpha($event)">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"LastName"| translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.billing_address.last_name" name="last_name" (keyup)="checkAlpha($event)">
+        </ion-input>
+      </ion-item>
+      <!--ion-item>
+        <ion-label floating>{{"Company" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.billing_address.company" name="company">
+        </ion-input>
+      </ion-item-->
+      <ion-item>
+        <ion-label floating>{{"Phone" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.billing_address.phone" name="phone">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"Email" | translate}}
+        </ion-label>
+        <ion-input required type="email" [(ngModel)]="editAddress.billing_address.email" name="email">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"StreetAddress" | translate}} 1
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.billing_address.address_1" name="address_1">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"StreetAddress" | translate}} 2
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.billing_address.address_2" name="address_2">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"City" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.billing_address.city" name="city" (keyup)="checkAlpha($event)">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="country">
+        <ion-label>  
+          {{"Country" | translate}}
+        </ion-label>   
+        <ion-select [(ngModel)]="editAddress.billing_address.country" (ngModelChange)="getBillingRegion(editAddress.billing_address.country)" name="country">
+          <!--<div *ngFor="let field of country.country.countries | keys">
+            <ion-option value="{{field.key}}"><span [innerHTML]="field.value"></span>
+            </ion-option>
+          </div>-->
+          <div>
+            <ion-option value="PT"><span>Portugal</span>
+            </ion-option>
+          </div>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="billing_states">
+        <ion-label>  
+          {{"State" | translate}}
+        </ion-label>   
+        <ion-select [(ngModel)]="editAddress.billing_address.state" name="state">
+          <div *ngFor="let field of billing_states | keys">
+            <ion-option value="{{field.key}}">{{field.value}}
+            </ion-option>
+          </div>
+        </ion-select>      
+      </ion-item>
+      <ion-item *ngIf="!billing_states">
+        <ion-label floating>{{"Country" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.billing_address.state" name="state">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"Postcode" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.billing_address.postcode" name="postcode" (keyup)="checkNumbers($event)">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-item class="side-heading-background">
+    <ion-label class="heading-label">{{"SameForShipping" | translate}}
+    </ion-label>
+    <ion-toggle checked="true" [(ngModel)]="editAddress.shipping_true" name="subscribe">
+    </ion-toggle>
+  </ion-item>
+  <br>
+  <div *ngIf="!editAddress.shipping_true">
+    <ion-list>
+      <ion-item class="side-heading-background">
+        <h2 class="heading-label">{{"ShippingAddress" | translate}}
+        </h2>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"FirstName" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.shipping_address.first_name" name="firstname" (keyup)="checkAlpha($event)">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"LastName"| translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.shipping_address.last_name" name="last_name" (keyup)="checkAlpha($event)">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"Company" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.shipping_address.company" name="company">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"StreetAddress" | translate}} 1
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.shipping_address.address_1" name="address_1">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"StreetAddress" | translate}} 2
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.shipping_address.address_2" name="address_2">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"City" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.shipping_address.city" name="city" (keyup)="checkAlpha($event)">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="country">
+        <ion-label>  
+          {{"Country" | translate}}
+        </ion-label>   
+        <ion-select [(ngModel)]="editAddress.shipping_address.country" (ngModelChange)="getShippingRegion(editAddress.shipping_address.country)" name="country">
+          <div *ngFor="let field of country.country.countries | keys">
+            <ion-option value="{{field.key}}">{{field.value}}
+            </ion-option>
+          </div>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="shipping_states">
+        <ion-label>  
+          {{"State" | translate}}
+        </ion-label>   
+        <ion-select [(ngModel)]="editAddress.shipping_address.state" name="state">
+          <div *ngFor="let field of shipping_states | keys">
+            <ion-option value="{{field.key}}">{{field.value}}
+            </ion-option>
+          </div>
+        </ion-select>      
+      </ion-item>
+      <ion-item *ngIf="!shipping_states">
+        <ion-label floating>{{"Country" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.shipping_address.state" name="state">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"Postcode" | translate}}
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="editAddress.shipping_address.postcode" name="postcode" (keyup)="checkNumbers($event)">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="margin">
+    <button ion-button block color="button-color" type="submit" [disabled]="disableSubmit" class="button button-block button-default" text-uppercase (click)="saveAddress()">{{Save | translate}}
+    </button>
+  </div>
+</ion-content>

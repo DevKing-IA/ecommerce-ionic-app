@@ -1,0 +1,87 @@
+.postcode-section {
+    .list-md .item-input:last-child {
+        border-bottom: 0px !important;
+    }
+    display: flex;
+    flex-direction: column;
+    ion-label {
+        color: gray;
+    }
+    .code-section {
+        ion-icon {
+            margin-top: 10px;
+        }
+
+        border-bottom: 1px solid #f1efef
+    }
+}
+
+.account-register {
+    .button {
+        height: 2.5em;
+        border-radius: 0;
+    }
+    .margin {
+        margin: 5px;
+    }
+    .list {
+        margin: 0 0 16px 0;
+    }
+    .item {
+        padding: 0;
+    }
+    .list .item-block .item-inner {
+        border-bottom: 0.55px solid #edecef;
+    }
+    .list>.item-block:first-child {
+        border-top: none;
+    }
+    .list>.item-block:last-child {
+        border-bottom: 0.55px solid #e9e7f3;
+    }
+    .label[floating] {
+        margin: 5px 16px;
+        font-size: 14px;
+        color: #999;
+    }
+    .item.item-label-floating .text-input {
+        margin: 8px 0 8px 16px;
+        font-size: 15px;
+    }
+    .label {
+        margin: 11px 8px 11px 16px;
+        font-size: 15px;
+    }
+    .list-header {
+        border-bottom: 0.55px solid #e9e7f3;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        color: $side-heading-color;
+    }
+    .error-message {
+        margin: 5px;
+        h2 {
+            margin: 18px;
+            font-size: 14px;
+            color: red;
+        }
+        a {
+            display: none;
+        }
+    }
+    .alert-md .alert-radio-group, .alert-md .alert-checkbox-group {
+        position: relative;
+        overflow: auto;
+        max-height: 240px;
+        border-top: 1px solid #dedede;
+        border-bottom: 1px solid #dedede;
+        padding-left: 10px;
+    }
+    .alert-md .alert-button-group {
+        padding-right: 75px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle> <img src="assets/image/menu.png" width="25"></button>
+        <ion-title> <img src="assets/image/logo.png" width="45"></ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+                <ion-icon class="ion-ios-basket-outline item-icon"> <img src="assets/image/basket.png" width="20">
+                </ion-icon>
+
+                <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+
+            </button>
+
+        </ion-buttons>
+
+    </ion-navbar>
+
+    <ion-title text-center><span>{{"Pictogramas" | translate}}</span></ion-title>
+
+</ion-header>
+<ion-content padding class="pictogramas"> <br/> <h6><strong>Definição dos componentes a identificar</strong>
+</h6> <br/> <img src="assets/image/componentes.png"/> <br/><br/> <h6><strong>Definição dos
+    materiais</strong></h6> <br/> <img src="assets/image/materiais.png"/> <br/><br/> <p
+        class="disclaimer">De acordo com com o Decreto-lei nº 29/96, de 23 de Março</p>
+</ion-content>

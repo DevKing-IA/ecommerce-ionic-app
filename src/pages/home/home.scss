@@ -1,0 +1,100 @@
+
+$s-min: 20;
+$s-max: 70;
+$l-min: 30;
+$l-max: 90;
+
+.home {
+    font-family: arial;
+    .card-md ion-card-content {
+        padding: 0px;
+    }
+    .main-categories {
+        ion-card-content {
+            padding: 0px;
+            position: relative;
+            max-height: 200px;
+            .cat-overlay{
+                background: rgba(0, 0, 0, 0.3);
+                position: absolute;
+                top: 0;
+                bottom: 0px;
+                left: 0;
+                right: 0;
+            }
+        }
+        ion-label {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            left: 0;
+            right: 0;
+            height: 50px;
+            span{
+                font-size: 28px;
+                line-height: 30px;
+                color: #fff;
+                letter-spacing: 4px;
+            }
+            .cat-description{
+                display: block;
+                color: #fff;
+                font-size: 12px;
+                font-style: normal;
+            }
+        }
+    }
+    ion-card {
+        margin: 0px;
+        width: 100%;
+    }
+    .row.unlimited-items {
+        flex-wrap: wrap;
+        padding-left: 5px;
+    }
+    .row.unlimited-items .col {
+        flex: none;
+        width: 100%;
+        padding: 5px 5px 0 0;
+        @media (min-width: 481px) and (max-width: 768px) {
+            .row.unlimited-items .col {
+                width: 100%;
+            }
+            ion-col:nth-child(3n+0) {
+                border-right: none;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .row.unlimited-items .col {
+                width: 50%;
+            }
+            ion-col:nth-child(4n+0) {
+                border-right: none;
+            }
+        }
+        @media (min-width: 1025px) {
+            .row.unlimited-items .col {
+                width: 33%;
+            }
+            ion-col:nth-child(5n+0) {
+                border-right: none;
+            }
+        }
+        img {
+            min-height: $min-home-category-height;
+        }
+    }
+    .scroll-content {
+        padding-bottom: 10px;
+    }
+    .shop-name {
+        margin: 0;
+        .label {
+            margin: 12px 0;
+        }
+        .item {
+            background-color: #f4f4f4;
+        }
+    }
+}

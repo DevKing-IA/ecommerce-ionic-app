@@ -1,0 +1,76 @@
+
+@import "ionic.globals";
+
+$text-color:        #000;
+$background-color:  #fff;
+
+$colors: (
+  primary:    #387ef5,
+  secondary:  #32db64,
+  danger:     #f25362,
+  light:      #f4f4f4,
+  dark:       #222,
+  shadow:     #bf4080,
+  shadowlite: #f9ebf2,
+
+
+  //color options
+  darkpink:   #bf4080,
+  darkpinklite: #f9ebf2,
+
+  skyblue:    #50b7c0,
+  skybluelite:#daeff1,
+
+  red:        #222222,
+  redlite:    #fdcece,
+
+  blue:       #3b5998,
+  bluelite:   #dae1f1,
+  
+
+  //customise header color here
+  header:     #222222,
+
+  //customise button color here
+  //button-color: #222222,
+  button-color: #7ed321,
+
+  //customise text color here
+  side-heading-color:  #222222
+
+);
+
+$shadowlite: #f9ebf2;
+$shadow: #bf4080;
+
+//customise text color here
+$side-heading-color:  #222222;
+
+//customise header color here
+$header:     #fff;
+
+//customise button color here
+$button-color: #222222;
+$toggle-color: #32db64;
+
+//customise toggle-button color here
+$toggle-button-color: #222222;
+
+//Set this for you banner height
+$min-banner-height:  14em;
+
+//Set this for you home category image height
+$min-home-category-height:  8em;
+
+//Set this for you products image height
+$min-product-height:  12em;
+
+//Set this for you product image slider height in product page
+$min-product-slider-height:  16em;
+
+
+@import "ionic.theme.default";
+
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";

@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-navbar color="header" hideBackButton>
+    <button ion-button menuToggle>
+        <img src="assets/image/menu.png" width="25">
+    </button>
+    <ion-title text-wrap text-center>{{"OrderSummary" | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content text-wrap class="order-summary">
+  <ion-spinner *ngIf="!orderSummary" name="crescent">
+  </ion-spinner>
+  <div *ngIf="orderSummary" class="margin">
+    <div *ngIf="orderSummary.order">
+      <div class="thank-you-message">
+        <ion-item>
+          <h2>{{"OrderReceived" | translate}} 
+          </h2>
+          <h3>{{"orderreceivedtext" | translate}}
+          </h3>
+        </ion-item>
+      </div>
+      <div *ngIf="orderSummary" class="summary">
+        <ion-item no-lines>
+          <h2>{{"OrderNumber" | translate}} : {{orderSummary.order.order_number}}
+          </h2>
+          <h2>{{"Orderdate" | translate}} : {{orderSummary.order.created_at | date:'medium'}}
+          </h2>
+          <h2>{{"Totalquantity" | translate}} :  {{orderSummary.order.total_line_items_quantity}}
+          </h2>
+          <h2>{{"Totals" | translate}} :  {{1*orderSummary.order.total | currency:values.currency:true:'1.2-2'}}
+          </h2>
+          <h2>{{"PaymentMethod" | translate}} :  {{orderSummary.order.payment_details.method_title}}
+          </h2>
+        </ion-item>
+      </div>
+      <div class="order-details">
+        <ion-item no-lines>
+          <ion-label class="side-header">{{"OrderDetails" | translate}}
+          </ion-label>
+        </ion-item>
+        <div *ngFor="let item of orderSummary.order.line_items | keys">
+          <ion-row >
+            <ion-col width-75>
+              <ion-label no-margin>{{item.value.name}} - ({{item.value.quantity}})
+              </ion-label>
+            </ion-col>
+            <ion-col width-25 text-right>
+              <ion-label no-margin>{{1*item.value.subtotal | currency:values.currency:true:'1.2-2' }}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </div>
+        <ion-row *ngIf="orderSummary.order.coupon_lines.length != 0" > 
+          <ion-col width-75>
+            <ion-label no-margin>{{"Coupon" | translate}}
+            </ion-label>
+          </ion-col>
+          <ion-col width-25 text-right>
+            <ion-label no-margin>{{1*orderSummary.order.total_discount | currency:values.currency:true:'1.2-2' }}
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row > 
+          <ion-col width-75>
+            <ion-label no-margin>{{"SubTotal" | translate}}
+            </ion-label>
+          </ion-col>
+          <ion-col width-25 text-right>
+            <ion-label no-margin>{{1*orderSummary.order.subtotal | currency:values.currency:true:'1.2-2' }}
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row > 
+          <ion-col width-50>
+            <ion-label no-margin>{{"Shipping" | translate}}
+            </ion-label>
+          </ion-col>
+          <ion-col width-50 text-right>
+            <ion-label no-margin>{{orderSummary.order.shipping_methods}}
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row > 
+          <ion-col width-50>
+            <ion-label no-margin>{{"PaymentMethod" |translate}}
+            </ion-label>
+          </ion-col>
+          <ion-col width-50 text-right>
+            <ion-label no-margin>{{orderSummary.order.payment_details.method_title}}
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="order-total"> 
+          <ion-col width-75>
+            <ion-label class="side-header">{{"Totals" |translate}}
+            </ion-label>
+          </ion-col>
+          <ion-col width-25 text-right>
+            <ion-label>
+              <b>{{1*orderSummary.order.total | currency:values.currency:true:'1.2-2' }}
+              </b>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer *ngIf="orderSummary">
+  <button ion-button full color="button-color" no-padding no-margin text-uppercase (click)="Continue()">
+    {{"Continue" | translate}}
+  </button>
+</ion-footer>

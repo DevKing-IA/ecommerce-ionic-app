@@ -1,0 +1,93 @@
+<!--<ion-header>-->
+<!--<ion-navbar color="header">-->
+<!--<button ion-button menuToggle>-->
+<!--<img src="assets/image/menu.png" width="25">-->
+<!--</button>-->
+<!--<ion-title text-center>{{"LogIn"| translate}}-->
+<!--</ion-title>-->
+<!--</ion-navbar>-->
+<!--</ion-header>-->
+<!--<ion-content class="account-login">-->
+<!--<div class="margin">-->
+<!--<div>-->
+<!--<img src="assets/image/logo.png" width="45">-->
+<!--</div>-->
+<!--<form #f="ngForm" class="login">-->
+<!--<ion-list>-->
+<!--<ion-item>-->
+<!--&lt;!&ndash;ion-label floating>{{"username" | translate}}</ion-label&ndash;&gt;-->
+<!--<ion-input required type="email" [(ngModel)]="loginData.username" name="firstname" placeholder="Email">-->
+<!--</ion-input>-->
+<!--</ion-item>-->
+<!--<ion-item>-->
+<!--&lt;!&ndash;ion-label floating>{{"password" | translate}}</ion-label&ndash;&gt;-->
+<!--<ion-input required type="password" [(ngModel)]="loginData.password" name="password" placeholder="Password">-->
+<!--</ion-input>-->
+<!--</ion-item>-->
+<!--</ion-list>-->
+<!--<div class="margin"> -->
+<!--<button ion-button block color="button-color" type="submit" class="button button-block button-default" text-uppercase [disabled]="disableSubmit" (click)="login(loginData)">{{buttonText}}-->
+<!--</button>-->
+<!--<br>-->
+<!--<button ion-button clear color="button-color" type="submit" class="button button-block button-clear" text-uppercase (click)="forgotten(loginData)">{{"ForgotPassword" | translate}} ?-->
+<!--</button>-->
+<!--</div>-->
+<!--</form>-->
+<!--<br/>-->
+<!--</div>-->
+<!--</ion-content>-->
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle><img src="assets/image/menu.png" width="25"></button>
+
+        <ion-title><img src="assets/image/logo.png" width="45"></ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+                <ion-icon class="ion-ios-basket-outline item-icon"><img src="assets/image/basket.png" width="20">
+                </ion-icon>
+                <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+            </button>
+
+        </ion-buttons>
+
+    </ion-navbar>
+
+    <ion-title text-center><span>{{"LogIn" | translate}}</span></ion-title>
+
+</ion-header>
+<ion-content class="account-login">
+    <div class="margin">
+        <form #f="ngForm" class="login">
+            <ion-list>
+                <ion-item>          <!--ion-label floating>{{"username" | translate}}</ion-label-->
+                    <ion-input required type="email" [(ngModel)]="loginData.username" name="firstname"
+                               placeholder="Email">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item>          <!--ion-label floating>{{"password" | translate}}</ion-label-->
+                    <ion-input required type="password" [(ngModel)]="loginData.password" name="password"
+                               placeholder="Password">
+                    </ion-input>
+
+                </ion-item>
+
+            </ion-list>
+
+            <div class="margin">
+                <button ion-button block color="button-color" type="submit" class="button button-block button-default"
+                        text-uppercase [disabled]="disableSubmit" (click)="login(loginData)">{{buttonText}}
+                </button>
+                <br>
+                <button ion-button clear color="button-color" type="submit" class="button button-block button-clear"
+                        text-uppercase (click)="forgotten(loginData)">{{"ForgotPassword" | translate}} ?
+                </button>
+
+            </div>
+
+        </form>
+        <br/>
+    </div>
+
+</ion-content>

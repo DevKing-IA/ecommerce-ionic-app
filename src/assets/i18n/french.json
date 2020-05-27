@@ -1,0 +1,1045 @@
+	
+{
+  "English": "Anglais",
+  "Hindi": "hindi",
+  "French": "français",
+  "Spanish": "arabe",
+  "Russian": "russe",
+  "Arabic": "Espanol",
+  "Italian": "coréen",
+  "Korean": "italien",
+  "Chinese": "chinois",
+  "SelectLanguage": "Choisir la langue",
+  "Name": "prénom",
+  "Default": "Défaut",
+  "Variation" : "Variation",
+  "ProceedtoCCAvenue": "Passer à CCAvenue",
+  "DeliveryTime": "Heure de livraison",
+  "DeliveryDate": "Date de livraison",
+  "GiftCardPromo": "Promo de cartes-cadeaux",
+  "Haveacoupon?Enterbelow" : "Avez-vous un coupon? Entrer ci-dessous",
+  "Delete" : "Effacer",
+  "AddToCart" : "Ajouter au panier",
+  "InStock": "En stock",	
+  "EmptyWishlistViewMessage": "Vide Message",
+  "Wishlist": "Liste de souhaits",
+  "AccountInfo": "Informations de compte",
+  "RegisterAccount": "Créer un compte",
+  "Cancel": "Annuler",
+  "LogIn": "S'identifier",
+  "Shop": "Boutique",
+  "ProductName": "Nom du produit",
+  "SameForShipping": "Idem pour l'expédition",
+  "Signup": "Vous n'avez pas de compte? Inscrivez-vous ici",
+  "Account": "Compte",
+  "Address": "ADRESSE",
+  "Logout": "Connectez - Out",
+  "Welcome": "Bienvenue",
+  "Email": "Email",
+  "password": "mot de passe",
+  "FirstName": "Prénom",
+  "LastName": "Nom de famille",
+  "Company": "Compagnie",
+  "Phone": "Téléphone",
+  "StreetAddress": "Adresse de rue",
+  "City": "Ville",
+  "Postcode": "Code postal",
+  "Country": "Pays",
+  "State": "Etat",
+  "AddressBook": "Carnet d'adresses",
+  "EditAddress": "Modifier l'adresse",
+  "ShippingAddress": "Adresse de livraison",
+  "Save": "sauvegarder",
+  "ResetPassword": "réinitialiser le mot de passe",
+  "Enteremailaddress": "Entrer l'adresse e-mail",
+  "ForgotPasswordReset": "Entrez votre email id enregistré sur le terrain et nous vous ferons parvenir les étapes pour réinitialiser votre mot de passe",
+  "reset": "réinitialiser",
+  "OrderInfo": "Informations de commande",
+  "OrderNumber": "Numéro de commande",
+  "Date": "Rendez-vous amoureux",
+  "PaymentMethod": "Mode de paiement",
+  "BillingAddress": " Adresse de facturation",
+  "ShippingMethod": "Méthode d'envoi",
+  "ProductDetails": "détails du produit",
+  "Totals": "totaux",
+  "SubTotal": "Total",
+  "ShippingTotal": "livraison totale",
+  "TaxTotal": "total Tax",
+  "GrandTotal": "somme finale",
+  "LastOrders": "Last Orders",
+  "Pleaselogin": "S'il vous plaît vous connecter",
+  "Youmustlogintoseeyourorders": "Vous devez être connecté pour voir vos commandes",
+  "username": "Nom d'utilisateur",
+  "ForgotPassword": "Mot de passe oublié",
+  "Therearenoorders.": "Il n'y a pas de commandes.",
+  "OrderNumber": "Numéro de commande",
+  "Orderdate": "Date de commande",
+  "Shipto": "Envoyez à",
+  "Status": "Statut",
+  "Quantity": "Quantité",
+  "ViewDetails": "Voir les détails",
+  "Cart": "Chariot",
+  "Yourcartisempty!": "Votre panier est vide!",
+  "emptycartrestuarent": "Ajouter une délicieuse nourriture disponible dans notre menu à la caisse.",
+  "BrowseOurMenu": "Parcourir Notre menu",
+  "Price": "Prix",
+  "Selectashippingmethod": "Sélectionnez une méthode d'expédition",
+  "Coupons": "Coupons",
+  "Shipping": "livraison",
+  "Grand Total": "somme finale",
+  "Checkout": "Check-out",
+  "Returningcustomer?Loginhere..": "Déjà client? Connectez-vous ici..",
+  "CreateAccount": "Créer un compte",
+  "Createanaccounttext": " Créer un compte en entrant les informations ci-dessous. Si vous êtes un client de retour s'il vous plaît vous connecter en haut de la page.",
+  "Yourorder": "Votre commande",
+  "Coupon": "Coupon",
+  "ProceedtopayPal": "Passez à PAYPAL",
+  "ProceedtoPayUMoney": "Passez à PayU argent",
+  "CardNumber": "Numéro de carte",
+  "StripeCardDetails": "Stripe Carte Détails",
+  "ExpiryMonth": "Mois d'expiration",
+  "ExpiryYear": "Année d'expiration",
+  "CardCode": "Code Carte",
+  "SelectPaymentMethod": "Sélectionnez le mode de paiement",
+  "OrderSummary": "Récapitulatif de la commande",
+  "OrderReceived": "Ordre reçu",
+  "orderreceivedtext": "Je vous remercie. Votre commande a été reçue.",
+  "OrderNumber": "Numéro de commande",
+  "Orderdate": "Date de commande",
+  "Totalquantity": "Quantité totale",
+  "OrderDetails": "détails de la commande",
+  "Shipping": "livraison",
+  "Continue": "Continuer",
+  "Home": "Accueil",
+  "UrbanKitchen": "Urban Kitchen",
+  "Product": "Produit",
+  "OUTOFSTOCK": "EN RUPTURE DE STOCK",
+  "Options": "options de",
+  "Selectoption": "Sélectionnez l'option",
+  "ShortDescription": "brève description",
+  "Description": "La description",
+  "ShowReviews": "Voir les commentaires",
+  "Reviews": "Avis",
+  "Products": "Des produits",
+  "Categories": "Catégories",
+  "Add": "Ajouter",
+  "Saving...": "économie...",
+  "resetting...": "remise à zéro ...",
+  "Logging In...": "Se connecter...",
+  "Registering...": "Enregistrement...",
+  "ContinueShopping": "Continuer vos achats",
+  "AddToEmptyCart": "Ajouter des produits disponibles dans notre menu pour la caisse",
+  "Remove": "Retirer",
+  "Apply": "Appliquer",
+  "ContinueCheckout": "continuer Commander",
+  "PleaseWait": "S'il vous plaît, attendez",
+  "PlaceOrder": "Passer la commande",
+  "TermsConditions" : "Termes et conditions",
+  "IAgree" : "je suis d'accord"
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

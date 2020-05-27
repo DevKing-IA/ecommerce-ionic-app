@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle>
+        <img src="assets/image/menu.png" width="25">
+    </button>
+    <ion-title text-center>{{"Wishlist"| translate}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+        <ion-icon class="ion-ios-cart item-icon">
+        </ion-icon>
+        <ion-badge class="badge badge-light" *ngIf="values.count">{{values.count}}
+        </ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="wishlistPage">
+
+<div *ngIf="wishlist?.error" class="margin">
+    <h2>{{wishlist.message}}
+    </h2>
+</div>
+
+    <div *ngIf="wishlist">
+    <div *ngIf="wishlist.length">
+    <div *ngFor="let item of wishlist | keys"  class="wish-list">
+
+    <ion-item no-lines>
+    <ion-thumbnail item-left>
+        <img src="{{item.value.image_thumb}}">
+    </ion-thumbnail>
+
+            <h2 wrap-text>{{item.value.name}}
+            </h2>
+            <h3 wrap-text > {{"Price" | translate}}: {{item.value.price | currency:values.currency:true:'1.2-2'}}
+            </h3>
+
+            <ion-row class="add-remove-button">
+            <ion-col royal width-50>
+
+                <button ion-button full color="danger" clear text-uppercase no-padding  item-left no-margin (click)="removeFromWishlist(item.value.id)">
+                <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                 REMOVE
+                </button>
+            </ion-col>
+            <ion-col royal width-50>
+                <button ion-button full no-padding no-margin clear text-uppercase item-right (click)="addToCart(item.value.id, item.value.type)">
+                <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+                  ADD TO CART
+                </button>
+                </ion-col>
+            </ion-row>
+
+    </ion-item>
+    </div>
+    </div>
+    </div>
+
+</ion-content>
+

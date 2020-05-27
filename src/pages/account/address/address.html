@@ -1,0 +1,71 @@
+<!--<ion-header>-->
+  <!--<ion-navbar color="header">-->
+    <!--<button ion-button menuToggle>-->
+        <!--<img src="assets/image/menu.png" width="25">-->
+    <!--</button>-->
+    <!--<ion-title text-wrap text-center>{{"AddressBook" | translate}}-->
+    <!--</ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle> <img src="assets/image/menu.png" width="25"></button>
+
+        <ion-title> <img src="assets/image/logo.png" width="45"></ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+                <ion-icon class="ion-ios-basket-outline item-icon"> <img src="assets/image/basket.png" width="20">
+                </ion-icon>
+
+                <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+
+            </button>
+
+        </ion-buttons>
+
+    </ion-navbar>
+
+    <ion-title text-center><span>{{"AddressBook" | translate}}</span></ion-title>
+
+</ion-header>
+<ion-content text-wrap class="account-address">
+<ion-spinner *ngIf="!addresses" name="crescent" style="display:block; margin-left: auto; margin-right:auto; margin-top: 5px; margin-bottom:5px" ></ion-spinner>
+   <div *ngIf="addresses" class="address">
+      <div *ngIf="addresses.customer.billing_address">
+      <ion-card>
+        <ion-card-header style="background-color: #f2f2f2">
+          {{"BillingAddress" | translate}}
+        </ion-card-header>
+        <ion-card-content style="margin-top: 10px">
+          {{addresses.customer.billing_address.first_name}} {{addresses.customer.billing_address.last_name}}<br *ngIf="addresses.customer.billing_address.first_name">
+          {{addresses.customer.billing_address.address_1}}<br *ngIf="addresses.customer.billing_address.address_1">
+          {{addresses.customer.billing_address.address_2}}<br *ngIf="addresses.customer.billing_address.address_2">
+          {{addresses.customer.billing_address.city}} {{addresses.customer.billing_address.state}}<br *ngIf="addresses.customer.billing_address.city">
+          {{addresses.customer.billing_address.phone}}<br *ngIf="addresses.customer.billing_address.phone">
+          {{addresses.customer.billing_address.email}}<br *ngIf="addresses.customer.billing_address.email">
+          {{addresses.customer.billing_address.country}} {{addresses.customer.billing_address.postcode}}<br *ngIf="addresses.customer.billing_address.postcode">
+        </ion-card-content>
+      </ion-card>
+      </div>
+      <div *ngIf="addresses.customer.shipping_address">
+      <ion-card>
+        <ion-card-header style="background-color: #f2f2f2">
+          {{"ShippingAddress" | translate}}
+        </ion-card-header>
+        <ion-card-content style="margin-top: 10px">
+          {{addresses.customer.shipping_address.first_name}} {{addresses.customer.shipping_address.last_name}}<br *ngIf="addresses.customer.shipping_address.first_name">
+          {{addresses.customer.shipping_address.address_1}}<br *ngIf="addresses.customer.shipping_address.address_1">
+          {{addresses.customer.shipping_address.address_2}}<br *ngIf="addresses.customer.shipping_address.address_2">
+          {{addresses.customer.shipping_address.city}} {{addresses.customer.shipping_address.state}}<br *ngIf="addresses.customer.shipping_address.city">
+          {{addresses.customer.shipping_address.phone}}<br *ngIf="addresses.customer.shipping_address.phone">
+          {{addresses.customer.shipping_address.email}}<br *ngIf="addresses.customer.shipping_address.email">
+          {{addresses.customer.shipping_address.country}} {{addresses.customer.shipping_address.postcode}}<br>
+        </ion-card-content>
+      </ion-card>
+      </div>
+      <div class="margin">
+         <button ion-button block color="button-color" type="submit" class="button button-block button-default" text-uppercase (click)="editAddress()">{{"EditAddress" | translate}}</button>
+      </div>
+   </div>
+</ion-content>

@@ -1,0 +1,51 @@
+.forgotten {
+    .margin {
+        margin: 5px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        min-height: 80%;
+    }
+    .button {
+        height: 2.8em;
+        width: 150px;
+        border-radius: 5px;
+        font-size: 13px;
+        margin: auto;
+    }
+    .list {
+        margin: 0 0 16px 0;
+    }
+    .item {
+        padding: 0;
+    }
+    .item .item-block .item-inner {
+        padding-right: 8px;
+        border-bottom: 0.55px solid #f3f2f7;
+    }
+    .label[floating] {
+        margin: 5px 16px;
+        padding-left: 30px;
+        font-size: 15px;
+        color: #666;
+        text-align: center;
+    }
+    .item.item-label-floating .text-input {
+        margin: 8px 0 8px 16px;
+        font-size: 15px;
+        text-align: center;
+    }
+    form {
+        margin: 20px 0 0 0;
+    }
+    h2 {
+        margin: 20px 15px;
+        font-size: 13px;
+        color: #999;
+        text-align: center;
+    }
+    //windows
+    .item-wp.item-label-floating .text-input {
+        margin: 5px 8px 0 8px;
+    }
+}

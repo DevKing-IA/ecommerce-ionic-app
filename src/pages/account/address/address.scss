@@ -1,0 +1,35 @@
+.account-address {
+    font-family: Arial;
+    .item {
+        padding: 16px 0 0;
+    }
+    .address {
+        h2 {
+            margin: 5px 0 5px 16px;
+            font-size: 15px;
+            font-weight: normal;
+        }
+        h1 {
+            margin: 5px 0 12px 16px;
+            font-size: 19px;
+            color: $side-heading-color;
+            font-weight: 500;
+        }
+    }
+    .label {
+        margin: 0;
+    }
+    .item.item-block .item-inner {
+        padding-right: 8px;
+        border-bottom: 0.55px solid #f1eff7;
+    }
+    .button {
+        margin: 0;
+        padding: 0 1em;
+        height: 2.5em;
+        font-size: 1.6rem;
+    }
+    .margin {
+        margin: 12px;
+    }
+}

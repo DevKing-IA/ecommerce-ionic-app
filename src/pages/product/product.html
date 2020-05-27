@@ -1,0 +1,311 @@
+<!--<ion-header>-->
+    <!--<ion-navbar color="header">-->
+        <!--<ion-title text-center *ngIf="product?.product?.title"><span [innerHTML]="product.product.title"></span>-->
+        <!--</ion-title>-->
+        <!--<ion-buttons end>-->
+            <!--<button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">-->
+                <!--<ion-icon class="ion-ios-basket-outline item-icon">-->
+                    <!--<img src="assets/image/basket.png" width="20">-->
+                <!--</ion-icon>-->
+                <!--<ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}-->
+                <!--</ion-badge>-->
+            <!--</button>-->
+        <!--</ion-buttons>-->
+    <!--</ion-navbar>-->
+<!--</ion-header>-->
+<ion-header>
+    <ion-navbar color="header">
+        <button ion-button menuToggle> <img src="assets/image/menu.png" width="25"></button>
+        <ion-title> <img src="assets/image/logo.png" width="45"></ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+                <ion-icon class="ion-ios-basket-outline item-icon"> <img src="assets/image/basket.png" width="20">
+                </ion-icon>
+                <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+
+            </button>
+
+        </ion-buttons>
+
+    </ion-navbar>
+
+    <ion-title text-center *ngIf="product?.product?.marca" style="background: white"><span [innerHTML]="product.product.marca"></span>
+    </ion-title>
+
+</ion-header>
+<ion-content class="product-page" padding-top>
+    <ion-spinner *ngIf="!product" name="crescent">
+    </ion-spinner>
+    <div *ngIf="product" class="product-details" padding-top>
+        <div *ngIf="product.product.images" padding-top>
+            <ion-slides pager="true" loop="true" autoplay="4800" class="product-image-slider" (ionSlideDidChange)="slideChanged()">
+                <ion-slide *ngFor="let item of product.product.images">
+                    <img src="{{item.src}}">
+                    <h2 *ngIf="!product.product.in_stock" item-right class="stock" color="danger">{{"OUTOFSTOCK" |
+                        translate}}
+                    </h2>
+                </ion-slide>
+            </ion-slides>
+        </div>
+        <ion-item class="product-name">
+            <ion-label>
+                {{product.product.title}}
+            </ion-label>
+        </ion-item>
+        <ion-item class="stock-label" no-lines>
+            <span class="price-delete"><del>{{1*product.product.regular_price | currency:values.currency:true:'1.2-2'}}</del></span>
+            <ion-label class="price-regular" *ngIf="!product.product.sale_price">{{1*product.product.price |
+                currency:values.currency:true:'1.2-2'}}
+            </ion-label>
+            <ion-label class="price-special" *ngIf="product.product.sale_price"><span>{{1*product.product.sale_price | currency:values.currency:true:'1.2-2'}}</span>
+
+            </ion-label>
+
+        </ion-item>
+
+
+        <!--variation product starts-->
+        <div *ngIf="product?.product?.variations.length" class="variation-product">
+            <ion-item class="variation-title">
+                <strong>{{"Options"| translate}}
+                </strong>
+            </ion-item>
+            <!--- new --->
+            <ion-item >
+                <ion-label>  {{"Cor" | translate}}</ion-label>
+                <ion-select [(ngModel)]="cor" (ngModelChange)="changeTamanho($event, product)">
+                    <div *ngFor="let option of product.product.cores">
+                        <ion-option value="{{option}}">{{option | uppercase}}</ion-option>
+                    </div>
+                </ion-select>
+            </ion-item>
+
+            <ion-item *ngIf="cor">
+                <ion-label>  {{"Tamanho" | translate}}</ion-label>
+                <ion-select [(ngModel)]="options[0]" (ngModelChange)="changeProduct()">
+                    <div *ngFor="let option of product.product.tamanhos">
+                        <ion-option value="{{option}}">{{option | uppercase}}</ion-option>
+                    </div>
+                </ion-select>
+            </ion-item>
+
+            <!--- end -->
+            <!--<ion-item>-->
+                <!--<ion-label>-->
+                    <!--{{"Variation" | translate}}-->
+                <!--</ion-label>-->
+                <!--<ion-select [(ngModel)]="options[0]" (ngModelChange)="changeProduct()">-->
+                    <!--<div *ngFor="let option of product.product.variations">-->
+                        <!--<div *ngIf="option.attributes.length == 1">-->
+                            <!--<ion-option-->
+                                    <!--value="{{'variation_id:' + option.id + ':variation[attribute_pa_'+ option.attributes[0].name +']:' + option.attributes[0].option}}">-->
+                                <!--{{option.attributes[0].option | uppercase}} - {{option.price |-->
+                                <!--currency:values.currency:true:'1.2-2'}}-->
+                            <!--</ion-option>-->
+                        <!--</div>-->
+                        <!--<div *ngIf="option.attributes.length == 2">-->
+                            <!--<ion-option-->
+                                    <!--value="{{'variation_id:' + option.id + ':variation[attribute_pa_'+ option.attributes[0].name +']:' + option.attributes[0].option + ':variation[attribute_pa_'+ option.attributes[1].name +']:' + option.attributes[1].option}}">-->
+                                <!--{{option.attributes[0].option | uppercase}} - {{option.attributes[1].option |-->
+                                <!--uppercase}} - {{option.price | currency:values.currency:true:'1.2-2'}}-->
+                            <!--</ion-option>-->
+                        <!--</div>-->
+                        <!--<div *ngIf="option.attributes.length == 3">-->
+                            <!--<ion-option-->
+                                    <!--value="{{'variation_id:' + option.id + ':variation[attribute_pa_'+ option.attributes[0].name +']:' + option.attributes[0].option + ':variation[attribute_pa_'+ option.attributes[1].name +']:' + option.attributes[1].option + ':variation[attribute_pa_'+ option.attributes[2].name +']:' + option.attributes[2].option}}">-->
+                                <!--{{option.attributes[0].option | uppercase}} - {{option.attributes[1].option |-->
+                                <!--uppercase}} - {{option.attributes[2].option | uppercase}} - {{option.price_inc_tax |-->
+                                <!--currency:values.currency:true:'1.2-2'}}-->
+                            <!--</ion-option>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</ion-select>-->
+            <!--</ion-item>-->
+            <button ion-button icon-left clear no-margin style="color: #090a0a" small text-uppercase icon-only
+                    class="has-icon icon-only" (click)="correspondences()">
+                <ion-icon name="ios-information-circle"></ion-icon>
+                {{"Correspondences" | translate}}
+            </button>
+        </div>
+
+        <div class="add-to-cart-button">
+            <button ion-button full text-uppercase [disabled]='disableSubmit' (click)="addToCart(product.product.id)">
+                {{AddToCart | translate}}
+            </button>
+        </div>
+
+        <button ion-button icon-left clear no-margin style="color: #090a0a" small ext-uppercase icon-only
+                class="has-icon icon-only" (click)="pictogramas()">
+            <ion-icon name="ios-information-circle"></ion-icon>
+            <p  class="">{{"Pictogramas" | translate}}</p>
+        </button>
+
+        <div text-center class="variation-title"><h4>{{"Composição"| translate}}</h4></div>
+
+        <div class="pictograma" style="width: 100%;">
+            <ion-row>
+                <ion-col size="6">
+                    <div class="pictogramaCell pictogramaHeader"><img src="assets/image/pictogramas-cg-corte.png"/>
+                    </div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="pictogramaCell" text-center><img
+                            src="assets/image/pictogramas-cg-{{product.product.pictogramasuperior11}}.png"/></div>
+                    <!--</ion-col>-->
+                    <!--<ion-col size="4">-->
+                    <div class="pictogramaCell" text-center><img *ngIf="product.product.pictogramasuperior12 != 0"
+                                                                 src="assets/image/pictogramas-cg-{{product.product.pictogramasuperior12}}.png"/>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="6">
+                    <div class="pictogramaCell pictogramaHeader"><img src="assets/image/pictogramas-cg-forro.png"/>
+                    </div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="pictogramaCell" text-center><img
+                            src="assets/image/pictogramas-cg-{{product.product.pictogramaforro21}}.png"/></div>
+                    <!--</ion-col>-->
+                    <!--<ion-col size="4">-->
+                    <div class="pictogramaCell" text-center><img *ngIf="product.product.pictogramaforro22 != 0"
+                                                                 src="assets/image/pictogramas-cg-{{product.product.pictogramaforro22}}.png"/>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="6">
+                    <div class="pictogramaCell pictogramaHeader"><img src="assets/image/pictogramas-cg-sola.png"/></div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="pictogramaCell" text-center><img
+                            src="assets/image/pictogramas-cg-{{product.product.pictogramasola31}}.png"/></div>
+                    <!--</ion-col>-->
+                    <!--<ion-col size="4">-->
+                    <div class="pictogramaCell" text-center><img *ngIf="product.product.pictogramasola32 != 0"
+                                                                 src="assets/image/pictogramas-cg-{{product.product.pictogramasola32}}.png"/>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <!--<div class="pictogramaBody">-->
+            <!--<div class="pictogramaRow">-->
+            <!--<div class="pictogramaCell pictogramaHeader"><img src="assets/image/pictogramas-cg-corte.png"/>-->
+            <!--</div>-->
+
+            <!--<div class="pictogramaCell" text-center><img-->
+            <!--src="assets/image/pictogramas-cg-{{product.product.pictogramasuperior11}}.png"/></div>-->
+
+            <!--<div class="pictogramaCell" text-center><img *ngIf="product.product.pictogramasuperior12 != 0"-->
+            <!--src="assets/image/pictogramas-cg-{{product.product.pictogramasuperior12}}.png"/>-->
+            <!--</div>-->
+
+            <!--</div>-->
+
+            <!--<div class="pictogramaRow">-->
+            <!--<div class="pictogramaCell pictogramaHeader"><img src="assets/image/pictogramas-cg-forro.png"/>-->
+            <!--</div>-->
+
+            <!--<div class="pictogramaCell" text-center><img-->
+            <!--src="assets/image/pictogramas-cg-{{product.product.pictogramaforro21}}.png"/></div>-->
+
+            <!--<div class="pictogramaCell" text-center><img *ngIf="product.product.pictogramaforro22 != 0"-->
+            <!--src="assets/image/pictogramas-cg-{{product.product.pictogramaforro22}}.png"/>-->
+            <!--</div>-->
+
+            <!--</div>-->
+
+            <!--<div class="pictogramaRow">-->
+            <!--<div class="pictogramaCell pictogramaHeader"><img src="assets/image/pictogramas-cg-sola.png"/></div>-->
+
+            <!--<div class="pictogramaCell" text-center><img-->
+            <!--src="assets/image/pictogramas-cg-{{product.product.pictogramasola31}}.png"/></div>-->
+
+            <!--<div class="pictogramaCell" text-center><img *ngIf="product.product.pictogramasola32 != 0"-->
+            <!--src="assets/image/pictogramas-cg-{{product.product.pictogramasola32}}.png"/>-->
+            <!--</div>-->
+
+            <!--</div>-->
+
+            <!--</div>-->
+
+        </div>
+        <div *ngIf="reviews?.product_reviews.length">
+            <ion-row class="item-background">
+                <ion-col>
+                    <!--button ion-button  *ngIf="!reviews" color="button-color" button small clear (click)="getReviews()" style="margin-bottom:0px">{{"ShowReviews" | translate}}
+                    </button-->
+                    <button ion-button *ngIf="reviews" color="button-color" button small clear class="review-title">
+                        {{"Reviews" | translate}}
+                    </button>
+                </ion-col>
+                <ion-col>
+                </ion-col>
+            </ion-row>
+            <div *ngFor="let item of reviews.product_reviews" class="reviews">
+                <ion-item no-lines>
+                    <ion-avatar item-start style="margin:8px">
+                        <img src="https://www.gravatar.com/avatar/{{item.avatar}}">
+                    </ion-avatar>
+                    <h3 style="margin-bottom:6px;font-size:15px">{{item.reviewer_name}}
+                        <span class="rating review-star">
+             <span class="star-icon" [ngClass]="{full: item.rating >= 1, half: item.rating == 0.5}">&#x2605;</span>
+             <span class="star-icon" [ngClass]="{full: item.rating >= 2, half: item.rating == 1.5}">&#x2605;</span>
+             <span class="star-icon" [ngClass]="{full: item.rating >= 3, half: item.rating == 2.5}">&#x2605;</span>
+             <span class="star-icon" [ngClass]="{full: item.rating >= 4, half: item.rating == 3.5}">&#x2605;</span>
+             <span class="star-icon" [ngClass]="{full: item.rating >= 5, half: item.rating == 4.5}">&#x2605;</span>
+           </span></h3>
+
+                    <!--h3 style="color:#9e9898">{{item.email}}</h3-->
+                    <h3 style="color:#9e9898;margin-bottom:4px">{{item.created_at | date:'medium'}}</h3>
+                </ion-item>
+                <p text-wrap>{{item.review}}</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div *ngIf="related?.products?.products" class="products-listing">
+        <div *ngIf="related?.products.products.length">
+            <ion-item no-lines class="item-name">
+                <ion-label text-uppercase>{{"RelatedProducts" | translate}}
+                </ion-label>
+            </ion-item>
+            <ion-list>
+                <div class="card-background-page grid">
+                    <ion-row class="row unlimited-items">
+                        <ion-col class="col half" *ngFor="let item of related.products.products">
+                            <ion-card>
+                                <ion-card-content class="">
+                                    <img tappable src="{{item.images[0].src}}" (click)="getProduct(item.id)">
+                                </ion-card-content>
+                                <div tappable (click)="getProduct(item.id)" class="card-name">
+                                    <ion-label *ngIf="item.title">{{item.title}}
+                                    </ion-label>
+                                    <ion-label *ngIf="item.name">{{item.name}}
+                                    </ion-label>
+                                </div>
+                                <ion-item no-padding class="price-list">
+                                    <h3 class="price-regular" *ngIf="!item.sale_price">{{1*item.price |
+                                        currency:values.currency:true:'1.2-2'}}
+                                    </h3>
+                                    <h3 class="price-special" *ngIf="item.sale_price">{{1*item.sale_price |
+                                        currency:values.currency:true:'1.2-2'}}
+                                    </h3>
+                                    <h3 class="price-delete" primary *ngIf="item.sale_price">
+                                        <del>{{1*item.regular_price | currency:values.currency:true:'1.2-2'}}
+                                        </del>
+                                    </h3>
+                                </ion-item>
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-list>
+        </div>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="has_more_items">
+        <ion-infinite-scroll-content loadingSpinner="crescent"
+                                     loadingText="{{'A carregar produtos' | translate}}"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

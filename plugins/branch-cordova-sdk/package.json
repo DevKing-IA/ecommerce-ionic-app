@@ -1,0 +1,63 @@
+{
+  "_from": "branch-cordova-sdk",
+  "_id": "branch-cordova-sdk@4.1.3",
+  "_inBundle": false,
+  "_integrity": "sha512-Jq4204qY63ZAOaIVsrflBuRtSm03FRrSnyC+Fbnd0Ruux1tmh2h5cEEm7PRw2RNjSEC3vYx68VMv8EYXjmKkqg==",
+  "_location": "/branch-cordova-sdk",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "branch-cordova-sdk",
+    "name": "branch-cordova-sdk",
+    "escapedName": "branch-cordova-sdk",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/branch-cordova-sdk/-/branch-cordova-sdk-4.1.3.tgz",
+  "_shasum": "22d37fc940dfee2e3a6c9c1d6e026fd6215cf793",
+  "_spec": "branch-cordova-sdk",
+  "_where": "e:\\work\\ionic\\CG2020_V_0.0.2",
+  "bugs": {
+    "url": "https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "glob": "^7.1.4",
+    "mkpath": "^1.0.0",
+    "node-version-compare": "^1.0.1",
+    "plist": "^3.0.1",
+    "request": "^2.85.0",
+    "shelljs": "^0.8.3",
+    "xcode": "^2.0.0",
+    "xml2js": "^0.4.19"
+  },
+  "deprecated": false,
+  "description": "Branch Metrics Cordova SDK",
+  "devDependencies": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=8.0.0"
+    }
+  ],
+  "homepage": "https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking",
+  "license": "MIT",
+  "main": "src/index.js",
+  "name": "branch-cordova-sdk",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking.git"
+  },
+  "version": "4.1.3"
+}

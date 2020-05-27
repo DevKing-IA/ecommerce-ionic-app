@@ -1,0 +1,200 @@
+.payment-icon {
+    display: flex;
+    padding: 8px 20px;
+}
+.billing-address-form {
+    font-family: arial;
+    .side-heading-background {
+        background-color: #f2f2f2;
+        ion-label {
+            font-size: 15px;
+        }
+    }
+    .margin {
+        margin: 5px;
+    }
+    .login-button {
+        margin: 0 10px;
+    }
+    .shipping-address-list {
+        margin: 10px 0;
+        h2 {
+            font-size: 15px;
+            font-weight: 500;
+        }
+    }
+    .Returningcustomer {
+        margin-bottom: 10px;
+    }
+    .create-account {
+        margin-top: 10px;
+        ion-label {
+            font-size: 15px;
+        }
+    }
+    .create-account-form {
+        margin: 0px;
+        ion-list {
+            margin: 0;
+        }
+    }
+    .payment-method-title {
+        padding-left: 20px;
+    }
+    .create-account-label {
+        margin: 10px 0 0 0;
+        background-color: #f2f2f2;
+        padding: 10px 20px;
+    }
+    .order-review-header {
+        margin-top: 10px;
+    }
+    .payment-method-header {
+        margin-top: 16px;
+    }
+    a {
+        color: #387ef5;
+    }
+    .stripe-payment {
+        margin: 0;
+        padding: 10px;
+    }
+    .payment-instructions {
+        margin: 0 16px 0 20px;
+        padding-top: 16px;
+    }
+    .woocommerce-message {
+        padding: 16px;
+    }
+    .button-margin {
+        margin: 5px;
+    }
+    ion-label {
+        font-size: 14px;
+        margin: 0 0 0 20px;
+        font-weight: 500;
+    }
+    scroll-content {
+        padding-bottom: 22px;
+    }
+    ion-col {
+        padding: 5px 5px 5px 0;
+    }
+    ion-row {
+        padding: 5px 5px 5px 0;
+    }
+    .list {
+        margin: 0;
+    }
+    .button {
+        margin-bottom: 5px;
+        padding: 0 1em;
+        height: 3.2em;
+        border-radius: 0;
+        font-size: 14px;
+        background: #7ed321;
+    }
+    .item {
+        position: relative;
+        padding-left: 0px;
+        border-radius: 0;
+        font-size: 1.7rem;
+        color: #000;
+        transition: background-color 200ms linear;
+    }
+    .login-form {
+        margin: 5px 0;
+        ion-list {
+            margin: -10px 0 0 0;
+        }
+        ion-item {
+            background-color: #fff;
+        }
+        .item-input ion-input, .item-input ion-textarea {
+            position: static;
+            background: #fff;
+            margin: 0 5px 5px 20px;
+        }
+        .item.item-label-floating .text-input {
+            margin: 8px 0 8px 8px;
+            font-size: 14px;
+        }
+    }
+    .list>.item-block:first-child, {
+        border-top: 1px solid #edecf1;
+    }
+    .list .item-block .item-inner {
+        border-bottom: 1px solid #edecf1;
+    }
+    .item .item-label-floating .text-input {
+        margin: 8px 0 8px 12px;
+    }
+    input:-webkit-autofill {
+        background-color: #fff;
+        color: #9e9898;
+    }
+    .coupon {
+        margin: -10px 0px 5px 0px;
+        ion-list {
+            margin: -10px 0 0 0;
+        }
+        ion-item {
+            background-color: #f9ecf2;
+        }
+        .item-input ion-input, .item-input ion-textarea {
+            position: static;
+            background: #fff;
+            margin: 0 5px 5px 20px;
+        }
+        .item .item-label-floating [item-right] {
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .item.item-block .item-inner {
+            border-bottom: none;
+        }
+        .item.item-label-floating .text-input {
+            margin: 8px 0 8px 8px;
+            font-size: 14px;
+        }
+    }
+    .list>.item-block:last-child, {
+        border-bottom: none;
+    }
+    .item-input ion-input, .item-input ion-textarea {
+        margin: 0 5px 5px 20px;
+    }
+    .select-text {
+        min-width: 16px;
+        font-size: 14px;
+    }
+    .label-ios[floating] {
+        margin-bottom: 0;
+        margin-top: 5px;
+        color: #999999;
+    }
+    .item-input ion-input {
+        margin: 0;
+    }
+    .item.item-label-floating .text-input {
+        margin: 8px 0 8px 20px;
+        font-size: 14px;
+    }
+    .item-md.item-toggle ion-label {
+        margin-left: 16px;
+    }
+    .label-md[floating] {
+        margin-bottom: 0;
+        margin-left: 16px;
+    }
+    .same-for-shipping {
+        margin-top: 10px;
+        .item-ios.item-block .item-inner {
+            padding-right: 8px;
+            border-bottom: none;
+        }
+    }
+    .same-for-shipping-form {
+        margin-top: 10px;
+    }
+}

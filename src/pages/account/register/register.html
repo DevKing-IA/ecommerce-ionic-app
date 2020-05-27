@@ -1,0 +1,173 @@
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle> <img src="assets/image/menu.png" width="25"></button>
+
+    <ion-title> <img src="assets/image/logo.png" width="45"></ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+        <ion-icon class="ion-ios-basket-outline item-icon"> <img src="assets/image/basket.png" width="20">
+        </ion-icon>
+
+        <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+
+      </button>
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+  <ion-title text-center><span>{{"RegisterAccount" | translate}}</span></ion-title>
+
+</ion-header>
+<ion-content class="account-register">
+  <div>
+    <form #f="ngForm">
+      <ion-list>
+        <ion-list-header> <b primary>{{"AccountInfo" | translate}} </b></ion-list-header>
+
+        <ion-item>
+          <ion-label floating>{{"FirstName" | translate}}*</ion-label>
+
+          <ion-input type="text" [(ngModel)]="registerData.first_name" name="firstname" (keyup)="checkAlpha($event)"></ion-input>
+
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>{{"LastName" | translate}}*</ion-label>
+
+          <ion-input type="text" [(ngModel)]="registerData.last_name" name="lastname" (keyup)="checkAlpha($event)"></ion-input>
+
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>{{"Email" | translate}}*</ion-label>
+
+          <ion-input type="email" [(ngModel)]="registerData.email" name="Email"></ion-input>
+
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>{{"Password" | translate}}*</ion-label>
+
+          <ion-input type="password" [(ngModel)]="registerData.password" name="password"></ion-input>
+
+        </ion-item>
+
+        <ion-item *ngIf="countries.country">
+          <ion-label>  {{"Country" | translate}}</ion-label>
+
+          <ion-select [(ngModel)]="registerData.billing_address.country"
+                      (ngModelChange)="getBillingRegion(registerData.billing_address.country)" name="country">
+
+            <div *ngFor="let field of countries.country.countries | keys">
+              <ion-option value="{{field.key}}"><span [innerHTML]="field.value"></span></ion-option>
+
+            </div>
+
+          </ion-select>
+
+        </ion-item>
+
+        <!--ion-item *ngIf="billing_states">            <ion-label>              {{"State" | translate}}          </ion-label>             <ion-select [(ngModel)]="registerData.billing_address.state" name="state">            <div *ngFor="let field of billing_states | keys">              <ion-option value="{{field.key}}">{{field.value}}              </ion-option>            </div>          </ion-select>        </ion-item>        <ion-item *ngIf="!billing_states">          <ion-label floating>{{"State" | translate}}          </ion-label>          <ion-input required type="text" [(ngModel)]="registerData.billing_address.state" name="state">          </ion-input>        </ion-item-->
+
+        <ion-item>
+          <ion-label floating>{{"City" | translate}}</ion-label>
+
+          <ion-input required type="text" [(ngModel)]="registerData.billing_address.city" name="billing_city" (keyup)="checkAlpha($event)">
+
+          </ion-input>
+
+        </ion-item>
+<!--        <ion-row>-->
+<!--          <ion-col>-->
+<!--            <ion-item no-lines>-->
+<!--              <ion-label>{{"Postcode" | translate}}*</ion-label>-->
+<!--            </ion-item>-->
+<!--          </ion-col>-->
+<!--          <ion-col>-->
+<!--            <ion-item>-->
+<!--&lt;!&ndash;              <ion-label floating>{{"Postcode" | translate}}*</ion-label>&ndash;&gt;-->
+
+<!--              <ion-input required type="text" maxlength="4" [(ngModel)]="registerData.billing_address.postcode1" name="postcode1"  (keyup)="checkNumbers($event)">-->
+
+<!--              </ion-input>-->
+
+<!--            </ion-item>-->
+<!--          </ion-col>-->
+<!--          <ion-col>-->
+<!--            <ion-item>-->
+<!--              <ion-label>asd-</ion-label>-->
+<!--            </ion-item>-->
+<!--          </ion-col>-->
+<!--          <ion-col>-->
+<!--            <ion-item>-->
+<!--&lt;!&ndash;              <ion-label floating>{{"" | translate}}  </ion-label>&ndash;&gt;-->
+
+<!--              <ion-input required type="text" maxlength="3" [(ngModel)]="registerData.billing_address.postcode2" name="postcode2"  (keyup)="checkNumbers($event)">-->
+
+<!--              </ion-input>-->
+
+<!--            </ion-item>-->
+<!--          </ion-col>-->
+<!--        </ion-row>-->
+        <div class="postcode-section">
+          <ion-label>{{"Postcode" | translate}}*</ion-label>
+          <div class="code-section">
+            <ion-row>
+              <ion-col col-3>
+                <ion-item no-lines no-padding no-margin>
+                  <ion-input text-right required type="text" maxlength="4" [(ngModel)]="registerData.billing_address.postcode1" placeholder="0000" name="postcode1"  (keyup)="checkNumbers($event)">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon name="remove"></ion-icon>
+              </ion-col>
+              <ion-col col-8>
+                <ion-item>
+                  <ion-input text-left required type="text" maxlength="3" [(ngModel)]="registerData.billing_address.postcode2" placeholder="000" name="postcode2"  (keyup)="checkNumbers($event)">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+          </div>
+        </div>
+
+        <ion-item>
+          <ion-label floating>{{"StreetAddress" | translate}}</ion-label>
+
+          <ion-input required type="text" [(ngModel)]="registerData.billing_address.address_1"
+                     name="billing_address_1">
+          </ion-input>
+
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>{{"NIF" | translate}}*</ion-label>
+
+          <ion-input type="text" [(ngModel)]="registerData.billing_address.company" name="company" (keyup)="checkNumbers($event)">
+          </ion-input>
+
+        </ion-item>
+
+      </ion-list>
+
+      <div *ngIf="errors" class="error-message"> <h2 *ngFor="let item of errors | keys">
+        {{item.value.message}} </h2>
+      </div>
+
+      <div class="margin">
+        <button ion-button block color="button-color" type="submit" class="button button-block button-default"
+                text-uppercase [disabled]="disableSubmit" (click)="registerCustomer()">{{RegisterAccount |
+          translate}}
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</ion-content>

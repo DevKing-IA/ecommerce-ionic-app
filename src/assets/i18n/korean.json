@@ -1,0 +1,1045 @@
+
+{
+  "English":"영어",
+  "Hindi": "힌디 어",
+  "French": "프랑스 국민",
+  "Spanish": "스페인 사람",
+  "Russian": "러시아인",
+  "Arabic": "아라비아 말",
+  "Italian": "이탈리아 사람",
+  "Korean": "한국어",
+  "Chinese": "중국말",
+  "SelectLanguage": "언어 선택",
+  "Name": "이름",
+  "Default": "태만",
+  "Variation" : "변화",
+  "ProceedtoCCAvenue": "CC 애비뉴로 진행",
+  "DeliveryTime": "배달 시간",
+  "DeliveryDate": "배달 날짜",
+  "GiftCardPromo": "기프트 카드 프로모션",
+  "Haveacoupon?Enterbelow" : "쿠폰 있어요? 아래에 입력하십시오.",
+  "Delete" : "지우다",
+  "AddToCart" : "장바구니에 담기",
+  "InStock": "재고",	
+  "EmptyWishlistViewMessage": "빈 위시리스트보기 메시지",
+  "Wishlist": "희망 목록",
+  "AccountInfo": "계정 정보",
+  "RegisterAccount": "계정 등록",
+  "Cancel": "취소",
+  "LogIn": "로그인",
+  "Shop": "가게",	
+  "ProductName": "상품명",
+  "SameForShipping": "배송지와 동일 함",
+  "Signup": "계정이 없습니까? 여기에 가입하십시오.",
+  "Account": "계정",
+  "Address": "주소",
+  "Logout": "로그 아웃",
+  "Welcome": "환영",
+  "Email": "이메일",
+  "password": "암호",
+  "FirstName": "이름",
+  "LastName": "성",
+  "Company": "회사",
+  "Phone": "전화",
+  "StreetAddress": "번지",
+  "City": "시티",
+  "Postcode": "우편 번호",
+  "Country": "국가",
+  "State": "상태",
+  "AddressBook": "주소록",
+  "EditAddress": "주소 편집",
+  "ShippingAddress": "배송 주소",
+  "Save": "구하다",
+  "ResetPassword": "암호를 재설정",
+  "Enteremailaddress": "이메일 주소를 입력",
+  "ForgotPasswordReset": "필드에 등록 된 이메일 ID를 입력하고 우리는 당신에게 비밀번호를 재설정하는 단계를 보내드립니다",
+  "reset": "다시 놓기",
+  "OrderInfo": "주문 정보",
+  "OrderNumber": "주문 번호",
+  "Date": "날짜",
+  "PaymentMethod": "지불 방법",
+  "BillingAddress": " 청구 지 주소",
+  "ShippingMethod": "배송 방법",
+  "ProductDetails": "제품 상세 정보",
+  "Totals": "합계",
+  "SubTotal": "소계",
+  "ShippingTotal": "배송 총",
+  "TaxTotal": "세금 총",
+  "GrandTotal": "총계",
+  "LastOrders": "마지막 주문",
+  "Pleaselogin": "로그인 해주세요",
+  "Youmustlogintoseeyourorders": "당신은 당신의 주문을 보려면 로그인이 필요합니다",
+  "username": "사용자 이름",
+  "ForgotPassword": "비밀번호를 잊으 셨나요",
+  "Therearenoorders.": "어떤 주문이 ​​없습니다.",
+  "OrderNumber": "주문 번호",
+  "Orderdate": "주문 날짜",
+  "Shipto": "에 선박",
+  "Status": "지위",
+  "Quantity": "수량",
+  "ViewDetails": "세부 정보보기",
+  "Cart": "카트",
+  "Yourcartisempty!": "장바구니가 비어 있습니다!",
+  "emptycartrestuarent": "체크 아웃 우리의 메뉴에서 사용할 수 맛있는 음식을 추가합니다.",
+  "BrowseOurMenu": "우리의 메뉴를 찾아",
+  "Price": "가격",
+  "Selectashippingmethod": "배송 방법을 선택",
+  "Coupons": "쿠폰",
+  "Shipping": "배송",
+  "Grand Total": "총계",
+  "Checkout": "점검",
+  "Returningcustomer?Loginhere..": "고객 갈까요? 여기에 로그인 ..",
+  "CreateAccount": "계정 만들기",
+  "Createanaccounttext": " 아래의 정보를 입력하여 계정을 만듭니다. 당신이 반환 고객의 경우 페이지 상단에 로그인하시기 바랍니다.",
+  "Yourorder": "주문",
+  "Coupon": "쿠폰",
+  "ProceedtopayPal": "페이팔로 진행",
+  "ProceedtoPayUMoney": "PayU 돈에 진행",
+  "CardNumber": "카드 번호",
+  "StripeCardDetails": "스트라이프 카드의 자세한 사항",
+  "ExpiryMonth": "만기 월",
+  "ExpiryYear": "유효 해",
+  "CardCode": "카드 코드",
+  "SelectPaymentMethod": "선택 지불 방법",
+  "OrderSummary": "주문 요약",
+  "OrderReceived": "주문을받은",
+  "orderreceivedtext": "고맙습니다. 주문이 접수되었습니다.",
+  "OrderNumber": "주문 번호",
+  "Orderdate": "주문 날짜",
+  "Totalquantity": "총량",
+  "OrderDetails": "주문 정보",
+  "Shipping": "배송",
+  "Continue": "잇다",
+  "Home": "집",
+  "UrbanKitchen": "도시의 부엌",
+  "Product": "생성물",
+  "OUTOFSTOCK": "품절",
+  "Options": "옵션",
+  "Selectoption": "선택 옵션",
+  "ShortDescription": "간단한 설명",
+  "Description": "기술",
+  "ShowReviews": "보기 리뷰",
+  "Reviews": "리뷰",
+  "Products": "제작품",
+  "Categories": "카테고리",
+  "Add": "더하다",
+  "Saving...": "절약...",
+  "resetting...": "재설정 ...",
+  "Logging In...": "에 로그인 ...",
+  "Registering...": "등록 ...",
+  "ContinueShopping": "쇼핑을 계속",
+  "AddToEmptyCart": "체크 아웃 우리의 메뉴에서 사용할 수있는 일부 제품 추가",
+  "Remove": "풀다",
+  "Apply": "대다",
+  "ContinueCheckout": "체크 아웃 계속",
+  "PleaseWait": "잠시 기다려주십시오",
+  "PlaceOrder": "장소 주문",
+  "TermsConditions" : "이용 약관",
+  "IAgree" : "나는 동의한다"
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

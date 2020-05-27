@@ -1,0 +1,133 @@
+<!--<ion-header>-->
+  <!--<ion-navbar color="header">-->
+    <!--<button ion-button menuToggle>-->
+        <!--<img src="assets/image/menu.png" width="25">-->
+    <!--</button>-->
+    <!--<ion-title text-center>{{"OrderInfo" | translate}}-->
+    <!--</ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle> <img src="assets/image/menu.png" width="25"></button>
+
+    <ion-title> <img src="assets/image/logo.png" width="45"></ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only light class="has-icon icon-only has-badge" (click)="getCart()">
+        <ion-icon class="ion-ios-basket-outline item-icon"> <img src="assets/image/basket.png" width="20">
+        </ion-icon>
+
+        <ion-badge class="badge badge-light" *ngIf="values.count != 0">{{values.count}}</ion-badge>
+
+      </button>
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+  <ion-title text-center><span>{{"OrderInfo" | translate}}</span></ion-title>
+
+</ion-header>
+<ion-content class="order-details">
+  <ion-spinner *ngIf="!orderDetails" name="crescent">
+  </ion-spinner>
+  <div *ngIf="orderDetails">
+    <ion-item-group>
+      <ion-item-divider>{{"OrderNumber" | translate }}
+      </ion-item-divider>
+      <ion-item no-lines>{{orderDetails.order.order_number}}
+      </ion-item>
+      <ion-item-divider>{{"Date" | translate}}
+      </ion-item-divider>
+      <ion-item no-lines>{{orderDetails.order.created_at | date:'medium'}}
+      </ion-item>
+      <ion-item-divider>{{"PaymentMethod" | translate}}
+      </ion-item-divider>
+      <ion-item no-lines>{{orderDetails.order.payment_details.method_title}}
+      </ion-item>
+      <ion-item-divider>{{"BillingAddress" | translate}}
+      </ion-item-divider>
+      <ion-item>
+        {{orderDetails.order.billing_address.first_name}}
+        {{orderDetails.order.billing_address.last_name}},
+        <br>
+        {{orderDetails.order.billing_address.email}}
+        <br>
+        {{orderDetails.order.billing_address.phone}}
+        <br>
+        {{orderDetails.order.billing_address.address_1}},
+        <br>
+        {{orderDetails.order.billing_address.address_2}},
+        <br>
+        {{orderDetails.order.billing_address.city}}, 
+        {{orderDetails.order.billing_address.state}}
+        <br>
+        {{orderDetails.order.billing_address.postcode}}
+      </ion-item>
+      <ion-item-divider>{{"ShippingMethod" | translate}}
+      </ion-item-divider>
+      <ion-item no-lines>{{orderDetails.order.shipping_methods}}
+      </ion-item>
+      <ion-item-divider>{{"ShippingAddress" | translate}}
+      </ion-item-divider>
+      <ion-item>
+        {{orderDetails.order.shipping_address.first_name}}
+        {{orderDetails.order.shipping_address.last_name}},
+        <br>
+        {{orderDetails.order.shipping_address.company}}
+        <br>
+        {{orderDetails.order.shipping_address.address_1}},
+        <br>
+        {{orderDetails.order.shipping_address.address_2}},
+        <br>
+        {{orderDetails.order.shipping_address.city}}, 
+        {{orderDetails.order.shipping_address.state}}
+        <br>
+        {{orderDetails.order.shipping_address.country}}
+        <br>
+        {{orderDetails.order.shipping_address.postcode}}
+      </ion-item>
+      <ion-item-divider>{{"ProductDetails" | translate}}
+      </ion-item-divider>
+      <ion-item *ngFor="let item of orderDetails.order.line_items">
+        <h2>{{"ProductName" | translate}} : {{item.name}}
+        </h2>
+        <h2>{{"Price" | translate}} : {{item.price}}
+        </h2>
+        <h2>{{"Quantity" | translate}} : {{item.quantity}}
+        </h2>     
+        <h2>{{"SubTotal" | translate}} : {{1*item.subtotal}}
+        </h2>
+      </ion-item>
+      <ion-item-divider>{{"Totals" | translate}}
+      </ion-item-divider>
+      <ion-item>
+        <ion-row>
+          <ion-col>{{"SubTotal" | translate}}
+          </ion-col>
+          <ion-col text-right>{{1*orderDetails.order.subtotal}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> {{"ShippingTotal" | translate}}
+          </ion-col>
+          <ion-col text-right>{{1*orderDetails.order.total_shipping}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>{{"TaxTotal" | translate}}
+          </ion-col>
+          <ion-col text-right>{{1*orderDetails.order.total_tax}}
+          </ion-col>
+        </ion-row>
+        <ion-row text-uppercase>
+          <ion-col>{{"GrandTotal" | translate}}
+          </ion-col>
+          <ion-col text-right>{{1*orderDetails.order.total}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-item-group>
+  </div>
+</ion-content>
