@@ -4,4 +4,5 @@ platforms
 .idea
 node_modules/
 package-lock.json
-resources
+resources/
+plugins/

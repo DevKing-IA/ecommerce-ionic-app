@@ -22,6 +22,7 @@ export class ProductService {
 
     }
     getProduct(id) {
+        console.log("this is getting product", this.config);
         return new Promise(resolve => {
             this.http.get(this.config.setUrl('GET', '/wc-api/v3/products/' + id + '?', false), this.config.options).map(res => res.json())
                 .subscribe(data => {
@@ -47,6 +48,7 @@ export class ProductService {
                 console.log(param);
                 console.log(params[param]);
             }
+            console.log("this is adding cart", this.config);
             this.http.post(this.config.url + '/wp-admin/admin-ajax.php?action=mstoreapp-add_to_cart', searchParams, this.config.options).map(res => res.json())
                 .subscribe(data => {
                     this.status = data;

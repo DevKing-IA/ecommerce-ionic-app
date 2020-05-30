@@ -94,9 +94,9 @@ export class ProductPage {
             //var pa_tamanho = ["find"](variation.attributes, ["slug", "tamanho"]).option;
             //this.product.product.tamanhos.push(pa_tamanho);
         });
-        console.log(results);
+        //console.log(results);
         results.product.attributes.forEach(function (attrib) {
-            console.log(attrib);
+            
             if(attrib['slug'] === 'marca') {
                 results.product.marca = attrib.options[0];
             }
@@ -211,15 +211,13 @@ export class ProductPage {
     }
     changeImage(cor, size){
         if (cor !== undefined && size !== undefined) {
-            console.log(cor);
-            console.log(size);
+           
             for (let item in this.product.product.variations) {
                 let sku = this.product.product.variations[item].sku;
                 var fields = sku.split('-');
                 var colors = fields[1];
                 var sizecheck = fields[2];
-                console.log(colors);
-                console.log(sizecheck);
+                
                 if(colors === cor && sizecheck === size) {
                     console.log(this.product.product.variations[item].image[0].src);
                     //this.product.product.images.shift();
@@ -232,13 +230,13 @@ export class ProductPage {
                     // this.slides.startAutoplay();
                 }
             }
-            console.log(this.product);
+            
         }
     }
     slideChanged() {
-        console.log(this.slides);
+       
         let currentIndex = this.slides.getActiveIndex();
-        console.log('Current index is', currentIndex);
+        
         this.cdr.detectChanges();
         this.slides.update();
         this.slides.slideTo(0);

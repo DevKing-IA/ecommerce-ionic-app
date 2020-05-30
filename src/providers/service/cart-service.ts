@@ -19,6 +19,7 @@ export class CartService {
 
     }
     loadCart() {
+        console.log(this.config);
         return new Promise(resolve => {
             this.http.get(this.config.url + '/wp-admin/admin-ajax.php?action=mstoreapp-cart', this.config.options).map(res => res.json())
                 .subscribe(data => {

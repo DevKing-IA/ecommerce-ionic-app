@@ -27,7 +27,7 @@ import { EmailComposer } from '@ionic-native/email-composer';
 import { URLSearchParams } from '@angular/http';
 // import { InAppBrowser } from '@ionic-native/in-app-browser';
 // import {BranchIo} from "@ionic-native/branch-io";
-
+declare var wkWebView: any;
 @Component({
     templateUrl: 'app.html'
 })
@@ -53,6 +53,13 @@ export class MyApp {
                 private socialSharing: SocialSharing,
     ) {
         platform.ready().then(() => {
+
+            //only apply to ios platform
+            document.addEventListener('deviceready', () => {
+                wkWebView.injectCookie('https://cgapp.lragencytechnology.com/');
+            });
+
+
             let params = new URLSearchParams(window.location.search);
             let someParam = params.get('key');
             console.log(  'searchParams' + someParam);
